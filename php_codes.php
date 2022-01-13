@@ -358,6 +358,11 @@ if(ISSET($_POST['btn_borrow_item']))
 
     $result = mysqli_query($connection,$query);
         
+    //query ADD - borrowed_items table
+    $array_columns = array("ctrl_no","asset_tag_no","item_no","category","serial_no","item_details","remarks","status","returning_plan_date","borrowed_date");
+    $array_column_values = array($txt_user_id,$txt_user_name,$txt_password,$txt_department);
+    query_add($connection,"user",$array_columns,$array_column_values);
+        
     echo"<script>alert('Item Borrowed Successfully');
 				      window.location.href = 'user_home.php';
                       </script>";
