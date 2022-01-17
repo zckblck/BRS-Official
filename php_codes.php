@@ -237,17 +237,17 @@ if(!empty($_POST['ajax_delete_control_no']))
 
 if(ISSET($_POST['btn_add_manage_returner']))
 {
-    if(ISSET($_POST['txt_user_id']) &&ISSET($_POST['txt_user_name']) && ISSET($_POST['txt_password']) && ISSET($_POST['txt_department']) )
+    if(ISSET($_POST['txt_user_id']) &&ISSET($_POST['txt_user_name']) && ISSET($_POST['txt_password']) && ISSET($_POST['dropdown_department']) )
     {
         $txt_user_id = $_POST['txt_user_id'];
         $txt_user_name = $_POST['txt_user_name'];
         $txt_password = $_POST['txt_password'];
-        $txt_department = $_POST['txt_department'];
+        $dropdown_department = $_POST['dropdown_department'];
 
         $txt_password = sha1($txt_password);
 
         $array_columns = array("user_id","user_name","pass","department");
-        $array_column_values = array($txt_user_id,$txt_user_name,$txt_password,$txt_department);
+        $array_column_values = array($txt_user_id,$txt_user_name,$txt_password,$dropdown_department);
 
         query_add($connection,"user",$array_columns,$array_column_values);
 
@@ -271,18 +271,18 @@ if(ISSET($_POST['btn_update_manage_returner']))
 {
     
     
-    if(ISSET($_POST['update_txt_user_id']) &&ISSET($_POST['update_txt_user_name']) && ISSET($_POST['update_txt_password']) && ISSET($_POST['update_txt_department']) )
+    if(ISSET($_POST['update_txt_user_id']) &&ISSET($_POST['update_txt_user_name']) && ISSET($_POST['update_txt_password']) && ISSET($_POST['update_dropdown_department']) )
     {
         $update_txt_user_id = $_POST['update_txt_user_id'];
         $update_txt_user_name = $_POST['update_txt_user_name'];
         $update_txt_password = $_POST['update_txt_password'];
-        $update_txt_department = $_POST['update_txt_department'];
+        $update_dropdown_department = $_POST['update_dropdown_department'];
 
         $update_txt_password = sha1($update_txt_password);
 
         
         $array_columns = array("user_id","user_name","pass","department");
-        $array_column_values = array($update_txt_user_id,$update_txt_user_name,$update_txt_password,$update_txt_department);
+        $array_column_values = array($update_txt_user_id,$update_txt_user_name,$update_txt_password,$update_dropdown_department);
         
         query_update($connection,"user",$array_columns,$array_column_values,"user_id = '$update_txt_user_id'");
 
@@ -358,10 +358,29 @@ if(ISSET($_POST['btn_borrow_item']))
 
     $result = mysqli_query($connection,$query);
         
+   /*     
     //query ADD - borrowed_items table
+    $query_result =  "SELECT * FROM items";
+    
+    while($row = $query_result->fetch_assoc() )
+    {
+    $control_no = $row['ctrl_no'];
+    $asset_tag_no = $row['asset_tag_no'];
+    $item_no = $row['item_no'];
+    $category = $row['category'];
+    $serial_no = $row['serial_no'];
+    $item_details = $row['item_details'];
+    $remarks = $row['remarks'];
+    $status = $row['status'];
+    $test = $row['test'];
+    
+    
+
     $array_columns = array("ctrl_no","asset_tag_no","item_no","category","serial_no","item_details","remarks","status","returning_plan_date","borrowed_date");
-    $array_column_values = array($txt_user_id,$txt_user_name,$txt_password,$txt_department);
+    $array_column_values = array($txt_ctrl_no);
     query_add($connection,"user",$array_columns,$array_column_values);
+        
+    */
         
     echo"<script>alert('Item Borrowed Successfully');
 				      window.location.href = 'user_home.php';
@@ -370,7 +389,6 @@ if(ISSET($_POST['btn_borrow_item']))
     }
     
 }
-
 
 
 

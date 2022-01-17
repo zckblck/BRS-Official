@@ -338,9 +338,12 @@
                           <label for="manage_returner_ADD_password">Password</label>
                       </div>
                     
+
                     <div class="form-floating mb-3">
-                          <input id="manage_returner_ADD_department" type="text" class="form-control"  name="txt_department" placeholder="Department" required/>
-                          <label for="manage_returner_ADD_department">Department</label>
+                          <label for="manage_returner_ADD_department">Department :</label>
+
+                          <?php echo create_select_dropdown("SELECT * from department ",$connection,"dropdown_department","department","department","form-control","manage_returner_ADD_department","","","","","text-align:center") ?>
+
                       </div>
 
                       
@@ -383,8 +386,10 @@
                       </div>
                     
                     <div class="form-floating mb-3">
-                          <input id="manage_returner_UPDATE_department" type="text" class="form-control"  name="update_txt_department" placeholder="Department" />
-                          <label for="manage_returner_UPDATE_department">Department</label>
+                          <label for="manage_returner_UPDATE_department">Department :</label>
+
+                          <?php echo create_select_dropdown("SELECT * from department ",$connection,"update_dropdown_department","department","department","form-control","manage_returner_UPDATE_department","","","","","text-align:center") ?>
+
                       </div>
 
                       
