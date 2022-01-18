@@ -391,7 +391,7 @@ if(ISSET($_POST['btn_filter']))
 
 
 
-//------------------display on table on UPDATE MODAL adm_home.php
+//------------------display on table on UPDATE ITEM MODAL adm_home.php
 $query = "SELECT * FROM items";
 
 $result = mysqli_query($connection,$query);
@@ -426,7 +426,7 @@ while($row = $result->fetch_assoc() )
 
 
 
-//------------------display on table on DELETE MODAL adm_home.php
+//------------------display on table on DELETE ITEM MODAL adm_home.php
 $query = "SELECT * FROM items";
 
 $result = mysqli_query($connection,$query);

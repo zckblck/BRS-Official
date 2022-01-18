@@ -140,11 +140,8 @@ if(ISSET($_POST['btn_update_item']))
     echo"<script>alert('Item Updated Successfully');
 				      window.location.href = 'adm_home.php';
                       </script>";
-        
     }
-    
 }
-
 //-------------------------------------AJAX SELECT DATA FOR UPDATE BUTTON MODAL.PHP
 if(!empty($_POST['ajax_update_control_no']))
 {
@@ -197,11 +194,8 @@ if(ISSET($_POST['btn_delete_item']))
     echo"<script>alert('Item Deleted Successfully');
 				      window.location.href = 'adm_home.php';
                       </script>";
-        
-    }
-    
+        }
 }
-
 //-------------------------------------AJAX SELECT DATA FOR DELETE BUTTON MODAL.PHP
 if(!empty($_POST['ajax_delete_control_no']))
 {
@@ -227,6 +221,11 @@ if(!empty($_POST['ajax_delete_control_no']))
 
     }
 }
+
+
+
+
+
 
 
 
@@ -288,13 +287,9 @@ if(ISSET($_POST['btn_update_manage_returner']))
 
         echo"<script>alert('User Updated Successfully');
                           window.location.href = 'adm_home.php';
-                          </script>";
-        
-    }
-    
+                          </script>";   
+    }  
 }
-
-
 //-------------------------------------AJAX SELECT DATA FOR MANAGE RETURNER BUTTON MODAL.PHP
 if(!empty($_POST['ajax_manage_returner_control_no']))
 {
@@ -384,14 +379,9 @@ if(ISSET($_POST['btn_borrow_item']))
         
     echo"<script>alert('Item Borrowed Successfully');
 				      window.location.href = 'user_home.php';
-                      </script>";
-        
-    }
-    
+                      </script>";  
+    }  
 }
-
-
-
 //-------------------------------------AJAX SELECT DATA FOR BORROW BUTTON MODAL.PHP
 if(!empty($_POST['ajax_borrow_control_no']))
 {
@@ -450,12 +440,8 @@ if(ISSET($_POST['btn_return_item']))
     echo"<script>alert('Item Returned Successfully');
 				      window.location.href = 'user_home.php';
                       </script>";
-        
-    }
-    
+    } 
 }
-
-
 //-------------------------------------AJAX SELECT DATA FOR RETURN BUTTON MODAL.PHP
 if(!empty($_POST['ajax_return_control_no']))
 {

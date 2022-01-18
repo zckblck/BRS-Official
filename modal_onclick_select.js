@@ -107,7 +107,7 @@ function DELETE_MODAL_FUCTION(id)
 
 
 
-//-------SELECT TO FETCH DATA FROM DATABASE TABLE TO TEXTBOXES  AJAX UPDATE 
+//-------SELECT TO FETCH DATA FROM DATABASE TABLE TO TEXTBOXES  AJAX UPDATE - UPDATE ITEM MODAL
 function AJAX_UPDATE(id)
 {
     var control_no = document.getElementById("update_modal_table").rows[id].cells[0].innerHTML;
@@ -137,7 +137,7 @@ function AJAX_UPDATE(id)
 }
 
 
-//-------SELECT TO FETCH DATA FROM DATABASE TABLE TO TEXTBOXES   AJAX   DELETE
+//-------SELECT TO FETCH DATA FROM DATABASE TABLE TO TEXTBOXES   AJAX   DELETE - DELETE ITEM MODAL
 function AJAX_DELETE(id)
 {
     var control_no = document.getElementById("delete_modal_table").rows[id].cells[0].innerHTML;
