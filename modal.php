@@ -470,7 +470,7 @@
                       <div class="form-floating mb-3">
                           <label for="borrow_dropdown_categories">Category :</label>
 
-                          <?php echo create_select_dropdown("SELECT * from categories ",$connection,"dropdown_categories","category","category","form-control","borrow_dropdown_categories","","","","","text-align:center","disabled") ?>
+                          <?php echo create_select_dropdown("SELECT * from categories ",$connection,"borrow_dropdown_categories","category","category","form-control","borrow_dropdown_categories","","","","","text-align:center","disabled") ?>
 
                       </div>
 

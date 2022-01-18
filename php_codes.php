@@ -236,7 +236,7 @@ if(!empty($_POST['ajax_delete_control_no']))
 
 if(ISSET($_POST['btn_add_manage_returner']))
 {
-    if(ISSET($_POST['txt_user_id']) &&ISSET($_POST['txt_user_name']) && ISSET($_POST['txt_password']) && ISSET($_POST['dropdown_department']) )
+    if(ISSET($_POST['txt_user_id']) && ISSET($_POST['txt_user_name']) && ISSET($_POST['txt_password']) && ISSET($_POST['dropdown_department']) )
     {
         $txt_user_id = $_POST['txt_user_id'];
         $txt_user_name = $_POST['txt_user_name'];
@@ -270,7 +270,7 @@ if(ISSET($_POST['btn_update_manage_returner']))
 {
     
     
-    if(ISSET($_POST['update_txt_user_id']) &&ISSET($_POST['update_txt_user_name']) && ISSET($_POST['update_txt_password']) && ISSET($_POST['update_dropdown_department']) )
+    if(ISSET($_POST['update_txt_user_id']) && ISSET($_POST['update_txt_user_name']) && ISSET($_POST['update_txt_password']) && ISSET($_POST['update_dropdown_department']) )
     {
         $update_txt_user_id = $_POST['update_txt_user_id'];
         $update_txt_user_name = $_POST['update_txt_user_name'];
@@ -342,6 +342,22 @@ if(!empty($_POST['ajax_manage_returner_control_no']))
 
 if(ISSET($_POST['btn_borrow_item']))
 {
+    //to add in borrowed_items table
+   
+     $txt_ctrl_no = $_POST['txt_ctrl_no'];
+     $txt_asset_tag_no = $_POST['txt_asset_tag_no'];
+     $txt_item_no = $_POST['txt_item_no'];
+     $borrow_dropdown_categories = $_POST['borrow_dropdown_categories'];
+     $txt_serial_no = $_POST['txt_serial_no'];
+     $txt_item_details = $_POST['txt_item_details'];
+     $txt_remarks = $_POST['txt_remarks'];
+     $dropdown_status = $_POST['dropdown_status'];
+          
+    $array_columns = array("ctrl_no","asset_tag_no","item_no","category","serial_no","item_details","remarks","status");
+    $array_column_values = array($txt_ctrl_no,$txt_asset_tag_no,$txt_item_no,$borrow_dropdown_categories,$txt_serial_no,$txt_item_details,$txt_remarks,$dropdown_status);
+        
+    query_add($connection,"borrowed_items",$array_columns,$array_column_values);
+    
     
     
     if(ISSET($_POST['txt_ctrl_no']))
@@ -352,35 +368,13 @@ if(ISSET($_POST['btn_borrow_item']))
     $query = "UPDATE items SET status ='BORROWED' WHERE ctrl_no = '$txt_ctrl_no'";
 
     $result = mysqli_query($connection,$query);
-        
-   /*     
-    //query ADD - borrowed_items table
-    $query_result =  "SELECT * FROM items";
     
-    while($row = $query_result->fetch_assoc() )
-    {
-    $control_no = $row['ctrl_no'];
-    $asset_tag_no = $row['asset_tag_no'];
-    $item_no = $row['item_no'];
-    $category = $row['category'];
-    $serial_no = $row['serial_no'];
-    $item_details = $row['item_details'];
-    $remarks = $row['remarks'];
-    $status = $row['status'];
-    $test = $row['test'];
+    }
     
-    
-
-    $array_columns = array("ctrl_no","asset_tag_no","item_no","category","serial_no","item_details","remarks","status","returning_plan_date","borrowed_date");
-    $array_column_values = array($txt_ctrl_no);
-    query_add($connection,"user",$array_columns,$array_column_values);
-        
-    */
-        
     echo"<script>alert('Item Borrowed Successfully');
 				      window.location.href = 'user_home.php';
-                      </script>";  
-    }  
+                      </script>"; 
+  
 }
 //-------------------------------------AJAX SELECT DATA FOR BORROW BUTTON MODAL.PHP
 if(!empty($_POST['ajax_borrow_control_no']))
