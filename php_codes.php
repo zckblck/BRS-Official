@@ -364,9 +364,11 @@ if(ISSET($_POST['btn_borrow_item']))
      $txt_item_details = $_POST['txt_item_details'];
      $txt_remarks = $_POST['txt_remarks'];
      $dropdown_status = "BORROWED";
+     $returning_plan_date = $_POST['borrow_date_time'];
+     $date = date("Y-m-d H:i:s", time());
           
-    $array_columns = array("ctrl_no","asset_tag_no","item_no","category","serial_no","item_details","remarks","status");
-    $array_column_values = array($txt_ctrl_no,$txt_asset_tag_no,$txt_item_no,$borrow_dropdown_categories,$txt_serial_no,$txt_item_details,$txt_remarks,$dropdown_status);
+    $array_columns = array("ctrl_no","asset_tag_no","item_no","category","serial_no","item_details","remarks","status","returning_plan_date","borrowed_date");
+    $array_column_values = array($txt_ctrl_no,$txt_asset_tag_no,$txt_item_no,$borrow_dropdown_categories,$txt_serial_no,$txt_item_details,$txt_remarks,$dropdown_status,$returning_plan_date,$date);
         
     query_add($connection,"borrowed_items",$array_columns,$array_column_values);
     
@@ -442,9 +444,10 @@ if(ISSET($_POST['btn_return_item']))
      $txt_item_details = $_POST['txt_item_details'];
      $txt_remarks = $_POST['txt_remarks'];
      $dropdown_status = "RETURNED";
+    $date = date("Y-m-d H:i:s", time());
           
-    $array_columns = array("ctrl_no","asset_tag_no","item_no","category","serial_no","item_details","remarks","status");
-    $array_column_values = array($txt_ctrl_no,$txt_asset_tag_no,$txt_item_no,$return_dropdown_categories,$txt_serial_no,$txt_item_details,$txt_remarks,$dropdown_status);
+    $array_columns = array("ctrl_no","asset_tag_no","item_no","category","serial_no","item_details","remarks","status","returned_date");
+    $array_column_values = array($txt_ctrl_no,$txt_asset_tag_no,$txt_item_no,$return_dropdown_categories,$txt_serial_no,$txt_item_details,$txt_remarks,$dropdown_status,$date);
         
     query_add($connection,"returned_items",$array_columns,$array_column_values);
     
