@@ -342,23 +342,6 @@ if(!empty($_POST['ajax_manage_returner_control_no']))
 
 if(ISSET($_POST['btn_borrow_item']))
 {
-    //to add in borrowed_items table
-   
-     $txt_ctrl_no = $_POST['txt_ctrl_no'];
-     $txt_asset_tag_no = $_POST['txt_asset_tag_no'];
-     $txt_item_no = $_POST['txt_item_no'];
-     $borrow_dropdown_categories = $_POST['borrow_dropdown_categories'];
-     $txt_serial_no = $_POST['txt_serial_no'];
-     $txt_item_details = $_POST['txt_item_details'];
-     $txt_remarks = $_POST['txt_remarks'];
-     $dropdown_status = $_POST['dropdown_status'];
-          
-    $array_columns = array("ctrl_no","asset_tag_no","item_no","category","serial_no","item_details","remarks","status");
-    $array_column_values = array($txt_ctrl_no,$txt_asset_tag_no,$txt_item_no,$borrow_dropdown_categories,$txt_serial_no,$txt_item_details,$txt_remarks,$dropdown_status);
-        
-    query_add($connection,"borrowed_items",$array_columns,$array_column_values);
-    
-    
     
     if(ISSET($_POST['txt_ctrl_no']))
     {
@@ -370,6 +353,24 @@ if(ISSET($_POST['btn_borrow_item']))
     $result = mysqli_query($connection,$query);
     
     }
+    
+    
+    //to add in borrowed_items table
+     $txt_ctrl_no = $_POST['txt_ctrl_no'];
+     $txt_asset_tag_no = $_POST['txt_asset_tag_no'];
+     $txt_item_no = $_POST['txt_item_no'];
+     $borrow_dropdown_categories = $_POST['borrow_dropdown_categories'];
+     $txt_serial_no = $_POST['txt_serial_no'];
+     $txt_item_details = $_POST['txt_item_details'];
+     $txt_remarks = $_POST['txt_remarks'];
+     $dropdown_status = "BORROWED";
+          
+    $array_columns = array("ctrl_no","asset_tag_no","item_no","category","serial_no","item_details","remarks","status");
+    $array_column_values = array($txt_ctrl_no,$txt_asset_tag_no,$txt_item_no,$borrow_dropdown_categories,$txt_serial_no,$txt_item_details,$txt_remarks,$dropdown_status);
+        
+    query_add($connection,"borrowed_items",$array_columns,$array_column_values);
+    
+    
     
     echo"<script>alert('Item Borrowed Successfully');
 				      window.location.href = 'user_home.php';
@@ -421,7 +422,6 @@ if(!empty($_POST['ajax_borrow_control_no']))
 if(ISSET($_POST['btn_return_item']))
 {
     
-    
     if(ISSET($_POST['txt_ctrl_no']))
     {
  
@@ -431,10 +431,28 @@ if(ISSET($_POST['btn_return_item']))
 
     $result = mysqli_query($connection,$query);
         
+    }
+    
+    //to add in returned_items table
+     $txt_ctrl_no = $_POST['txt_ctrl_no'];
+     $txt_asset_tag_no = $_POST['txt_asset_tag_no'];
+     $txt_item_no = $_POST['txt_item_no'];
+     $return_dropdown_categories = $_POST['return_dropdown_categories'];
+     $txt_serial_no = $_POST['txt_serial_no'];
+     $txt_item_details = $_POST['txt_item_details'];
+     $txt_remarks = $_POST['txt_remarks'];
+     $dropdown_status = "RETURNED";
+          
+    $array_columns = array("ctrl_no","asset_tag_no","item_no","category","serial_no","item_details","remarks","status");
+    $array_column_values = array($txt_ctrl_no,$txt_asset_tag_no,$txt_item_no,$return_dropdown_categories,$txt_serial_no,$txt_item_details,$txt_remarks,$dropdown_status);
+        
+    query_add($connection,"returned_items",$array_columns,$array_column_values);
+    
+    
+    
     echo"<script>alert('Item Returned Successfully');
 				      window.location.href = 'user_home.php';
                       </script>";
-    } 
 }
 //-------------------------------------AJAX SELECT DATA FOR RETURN BUTTON MODAL.PHP
 if(!empty($_POST['ajax_return_control_no']))

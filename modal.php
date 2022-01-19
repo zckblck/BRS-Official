@@ -466,13 +466,12 @@
                           <input id="borrow_item_no" type="text" class="form-control"  name="txt_item_no" placeholder="Item Number" readonly  />
                           <label for="borrow_item_no">Item Number</label>
                       </div>
-
-                      <div class="form-floating mb-3">
-                          <label for="borrow_dropdown_categories">Category :</label>
-
-                          <?php echo create_select_dropdown("SELECT * from categories ",$connection,"borrow_dropdown_categories","category","category","form-control","borrow_dropdown_categories","","","","","text-align:center","disabled") ?>
-
+                    
+                    <div class="form-floating mb-3">
+                          <input id="borrow_dropdown_categories" type="text" class="form-control"  name="borrow_dropdown_categories" placeholder="Category" readonly  />
+                          <label for="borrow_dropdown_categories">Category</label>
                       </div>
+                    
 
                       <div class="form-floating mb-3">
                           <input id="borrow_serial_no" type="text" class="form-control"  name="txt_serial_no" placeholder="Serial Number" readonly/>
@@ -488,18 +487,13 @@
                           <input id="borrow_remarks" type="text" class="form-control"  name="txt_remarks" placeholder="Remarks" readonly/ >
                           <label for="borrow_remarks">Remarks</label>
                       </div>
-
-                      <div class="form-floating mb-3">
-                          <label for="floatingInput">Status :</label>
-                            <select id="borrow_status" class="form-select" aria-label="Default select example" style="text-align:center" name="dropdown_status" disabled>
-                              <option selected>---</option>
-                              <option value="AVAILABLE">AVAILABLE</option>
-                              <option value="UNAVAILABLE">UNAVAILABLE</option>
-                              <option value="FOR DISPOSAL">FOR DISPOSAL</option>
-                              <option value="FOR REPAIR">FOR REPAIR</option>
-                              <option value=""></option>
-                            </select>
+                    
+                    <div class="form-floating mb-3">
+                          <input id="borrow_status" type="text" class="form-control"  name="dropdown_status" placeholder="Status" readonly/ >
+                          <label for="borrow_remarks">Status</label>
                       </div>
+
+                      
                     
                 </div>
                 
@@ -578,13 +572,12 @@
                           <input id="return_item_no" type="text" class="form-control"  name="txt_item_no" placeholder="Item Number" readonly  />
                           <label for="return_item_no">Item Number</label>
                       </div>
-
-                      <div class="form-floating mb-3">
-                          <label for="return_dropdown_categories">Category :</label>
-
-                          <?php echo create_select_dropdown("SELECT * from categories ",$connection,"dropdown_categories","category","category","form-control","return_dropdown_categories","","","","","text-align:center","disabled") ?>
-
+                    
+                    <div class="form-floating mb-3">
+                          <input id="return_dropdown_categories" type="text" class="form-control"  name="return_dropdown_categories" placeholder="Category" readonly  />
+                          <label for="return_dropdown_categories">Category</label>
                       </div>
+
 
                       <div class="form-floating mb-3">
                           <input id="return_serial_no" type="text" class="form-control"  name="txt_serial_no" placeholder="Serial Number" readonly/>
@@ -600,19 +593,12 @@
                           <input id="return_remarks" type="text" class="form-control"  name="txt_remarks" placeholder="Remarks" readonly/ >
                           <label for="return_remarks">Remarks</label>
                       </div>
-
-                      <div class="form-floating mb-3">
-                          <label for="floatingInput">Status :</label>
-                            <select id="return_status" class="form-select" aria-label="Default select example" style="text-align:center" name="dropdown_status" disabled>
-                              <option selected>---</option>
-                              <option value="AVAILABLE">AVAILABLE</option>
-                              <option value="UNAVAILABLE">UNAVAILABLE</option>
-                              <option value="FOR DISPOSAL">FOR DISPOSAL</option>
-                              <option value="FOR REPAIR">FOR REPAIR</option>
-                              <option value=""></option>
-                            </select>
-                      </div>
                     
+                    <div class="form-floating mb-3">
+                          <input id="return_status" type="text" class="form-control"  name="dropdown_status" placeholder="Status" readonly/ >
+                          <label for="return_status">Status</label>
+                      </div>
+
                 </div>
                 
                 <div class="col">
