@@ -2,7 +2,6 @@
     require_once('functions.php');
 ?>
 
-
 <!---------------------------------------------------------------------ADMIN PAGE
 
 <!--------------------------------------- ADD ITEM MODAL -------------------------------------->
@@ -452,7 +451,7 @@
         </div>
         <div class="modal-body">
             <div class="row">
-                <div class="col-3">
+                <div class="col">
                      <div class="form-floating mb-3">
                           <input id="borrow_ctrl_no" type="text" class="form-control"  name="txt_ctrl_no" placeholder="Control Number" readonly  />
                           <label for="borrow_ctrl_no">Control Number</label>
@@ -491,17 +490,14 @@
                     
                     <div class="form-floating mb-3">
                           <input id="borrow_status" type="text" class="form-control"  name="dropdown_status" placeholder="Status" readonly/ >
-                          <label for="borrow_status">Status</label>
-                      </div>
-                    
-                      <div class="form-floating mb-3">
-                          <input id="date_time" type="datetime-local" class="form-control"  name="borrow_date_time" placeholder="Returning Plan Date" required / >
-                          <label for="date_time">Returning Plan Date</label>
+                          <label for="borrow_remarks">Status</label>
                       </div>
 
+                      
+                    
                 </div>
                 
-                <div class="col-7">
+                <div class="col">
                     <!-- Table Grid-->
                         <table id="borrow_modal_table" class="table table-hover" border=1>
                             
