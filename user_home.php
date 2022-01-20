@@ -44,7 +44,7 @@ require_once('nav.php');
                               } 
                               if($_SESSION['ROLE'] == "LDAP_USER"){
                               ?>
-                              <a type="button" class="btn btn-info btn-lg" style="height:100% ; width:300px"  disabled><br><br><br><br><br><br><br><br><br><br><br>"You can only Return on Authorized Department User" </a>
+                              <a type="button" class="btn btn-info btn-lg" style="height:100% ; width:300px"  disabled><br><br><br><br><br><br><br><br><br><br><br>"You can only Return on Authorized Department Returner" </a>
                               <?php
                               }
                               ?>
