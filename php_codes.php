@@ -353,7 +353,7 @@ if(ISSET($_POST['btn_borrow_item']))
     $result = mysqli_query($connection,$query);
     
     }
-    //commit
+    
     
     //to add in borrowed_items table
      $txt_ctrl_no = $_POST['txt_ctrl_no'];
