@@ -18,11 +18,6 @@ require_once('modal.php');
         <script type="text/javascript" src="Bootstrap513/charts.loader.js"></script><!-- google charts-->
         <script src="Bootstrap513/chart.min.js"></script> <!-- charts.js -->
         <script src="./modal_onclick_select.js"></script> <!-- modal_onclick_select.js -->
-         
-         
-        <script src="./Bootstrap513/moment.min.js"></script> <!-- cdn moment js -->
-        <script src="Bootstrap513/bootstrap-datetimepicker.min.js"></script> <!-- cdn js -->
-        <script src="Bootstrap513/bootstrap-datetimepicker.min.css"></script> <!-- cdn css -->
    
     </head>
     
@@ -85,7 +80,6 @@ require_once('modal.php');
          });
         
         
-       
 
     </script>
     
