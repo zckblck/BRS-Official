@@ -347,10 +347,13 @@ if(ISSET($_POST['btn_borrow_item']))
     {
  
     $txt_ctrl_no = $_POST['txt_ctrl_no'];
+    $borrowed_by = $_SESSION['username'];
         
     $query = "UPDATE items SET status ='BORROWED' WHERE ctrl_no = '$txt_ctrl_no'";
+    $query2 = "UPDATE items SET borrowed_by = '$borrowed_by' WHERE ctrl_no = '$txt_ctrl_no'";
 
     $result = mysqli_query($connection,$query);
+    $result2 = mysqli_query($connection,$query2);
     
     }
     
@@ -366,9 +369,10 @@ if(ISSET($_POST['btn_borrow_item']))
      $dropdown_status = "BORROWED";
      $returning_plan_date = $_POST['borrow_date_time'];
      $date = date("Y-m-d H:i:s", time());
+     $borrowed_by = $_SESSION['username'];
           
-    $array_columns = array("ctrl_no","asset_tag_no","item_no","category","serial_no","item_details","remarks","status","returning_plan_date","borrowed_date");
-    $array_column_values = array($txt_ctrl_no,$txt_asset_tag_no,$txt_item_no,$borrow_dropdown_categories,$txt_serial_no,$txt_item_details,$txt_remarks,$dropdown_status,$returning_plan_date,$date);
+    $array_columns = array("ctrl_no","asset_tag_no","item_no","category","serial_no","item_details","remarks","status","returning_plan_date","borrowed_date","borrowed_by");
+    $array_column_values = array($txt_ctrl_no,$txt_asset_tag_no,$txt_item_no,$borrow_dropdown_categories,$txt_serial_no,$txt_item_details,$txt_remarks,$dropdown_status,$returning_plan_date,$date,$borrowed_by);
         
     query_add($connection,"borrowed_items",$array_columns,$array_column_values);
     
@@ -397,8 +401,9 @@ if(!empty($_POST['ajax_borrow_control_no']))
     $remarks = $row['remarks'];
     $status = $row['status'];
     $test = $row['test'];
+    $borrowed_by = $row['borrowed_by'];
         
-    $array_items = array($control_no,$asset_tag_no,$item_no,$category,$serial_no,$item_details,$remarks,$status,$test);
+    $array_items = array($control_no,$asset_tag_no,$item_no,$category,$serial_no,$item_details,$remarks,$status,$test,$borrowed_by);
         
     echo json_encode($array_items);
 
@@ -430,8 +435,10 @@ if(ISSET($_POST['btn_return_item']))
     $txt_ctrl_no = $_POST['txt_ctrl_no'];
         
     $query = "UPDATE items SET status ='AVAILABLE' WHERE ctrl_no = '$txt_ctrl_no'";
+    $query2 = "UPDATE items SET borrowed_by ='' WHERE ctrl_no = '$txt_ctrl_no'";
 
     $result = mysqli_query($connection,$query);
+    $result2 = mysqli_query($connection,$query2);
         
     }
     
@@ -444,10 +451,11 @@ if(ISSET($_POST['btn_return_item']))
      $txt_item_details = $_POST['txt_item_details'];
      $txt_remarks = $_POST['txt_remarks'];
      $dropdown_status = "RETURNED";
-    $date = date("Y-m-d H:i:s", time());
+     $date = date("Y-m-d H:i:s", time());
+     $returned_by = $_SESSION['username'];
           
-    $array_columns = array("ctrl_no","asset_tag_no","item_no","category","serial_no","item_details","remarks","status","returned_date");
-    $array_column_values = array($txt_ctrl_no,$txt_asset_tag_no,$txt_item_no,$return_dropdown_categories,$txt_serial_no,$txt_item_details,$txt_remarks,$dropdown_status,$date);
+    $array_columns = array("ctrl_no","asset_tag_no","item_no","category","serial_no","item_details","remarks","status","returned_date","returned_by");
+    $array_column_values = array($txt_ctrl_no,$txt_asset_tag_no,$txt_item_no,$return_dropdown_categories,$txt_serial_no,$txt_item_details,$txt_remarks,$dropdown_status,$date,$returned_by);
         
     query_add($connection,"returned_items",$array_columns,$array_column_values);
     
@@ -475,8 +483,9 @@ if(!empty($_POST['ajax_return_control_no']))
     $remarks = $row['remarks'];
     $status = $row['status'];
     $test = $row['test'];
+    $borrowed_by = $row['borrowed_by'];
         
-    $array_items = array($control_no,$asset_tag_no,$item_no,$category,$serial_no,$item_details,$remarks,$status,$test);
+    $array_items = array($control_no,$asset_tag_no,$item_no,$category,$serial_no,$item_details,$remarks,$status,$test,$borrowed_by);
         
     echo json_encode($array_items);
 
