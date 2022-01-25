@@ -99,7 +99,7 @@
         </div>
         <div class="modal-body">
             <div class="row">
-                <div class="col">
+                <div class="col-3">
                      <div class="form-floating mb-3">
                           <input id="update_ctrl_no" type="text" class="form-control"  name="txt_ctrl_no" placeholder="Control Number" readonly  />
                           <label for="update_ctrl_no">Control Number</label>
@@ -157,14 +157,15 @@
                             
                             <thead>
                                 <tr style="text-align:center" padding: 70px 0;>
-                                    <th>CONTROL NUMBER</th>
-                                    <th>ASSET TAG NUMBER</th>
-                                    <th>ITEM NUMBER</th>
-                                    <th>CATEGORY</th>
-                                    <th>SERIAL NUMBER</th>
-                                    <th>ITEM DETAILS</th>
-                                    <th>REMARKS</th>
-                                    <th>STATUS</th>
+                                    <th style="font-size:13px">CONTROL NUMBER</th>
+                                    <th style="font-size:13px">ASSET TAG NUMBER</th>
+                                    <th style="font-size:13px">ITEM NUMBER</th>
+                                    <th style="font-size:13px">CATEGORY</th>
+                                    <th style="font-size:13px">SERIAL NUMBER</th>
+                                    <th style="font-size:13px">ITEM DETAILS</th>
+                                    <th style="font-size:13px">REMARKS</th>
+                                    <th style="font-size:13px">STATUS</th>
+                                    <th style="font-size:13px">CURRENTLY BORROWED BY</th>
                                     
                                 </tr>
                             </thead>
@@ -312,7 +313,7 @@
 
 <!---------------------------------------  MANAGE RETURNER MODAL -------------------------------------->
 <div class="modal fade" id="MANAGE_RETURNER_MODAL" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="display:none"> <!-- CHANGE ID NAME FOR MODAL -->
-    <div class="modal-dialog modal-xl">
+    <div class="modal-dialog modal-lg">
         
         <!------------------  ADD RETURNER FORM --------------------------->
     <form class="form-control"  method="post"  action="php_codes.php">
@@ -397,7 +398,7 @@
                 </div>
                 
                 
-                <div class="col">
+                <div class="col" style="overflow-x: auto">
                     <!-- Table Grid-->
                     Select to view
                         <table id="manage_returner_modal_table" class="table table-hover" border=1>
@@ -501,7 +502,7 @@
 
                 </div>
                 
-                <div class="col-7">
+                <div class="col" style="overflow-x: auto">
                     <!-- Table Grid-->
                         <table id="borrow_modal_table" class="table table-hover" border=1>
                             
