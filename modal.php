@@ -151,7 +151,7 @@
                     
                 </div>
                 
-                <div class="col">
+                <div class="col" style="overflow-x: auto">
                     <!-- Table Grid-->
                         <table id="update_modal_table" class="table table-hover" border=1>
                             
