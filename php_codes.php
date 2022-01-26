@@ -86,10 +86,11 @@ if(ISSET($_POST['btn_add_item']))
      $txt_item_details = $_POST['txt_item_details'];
      $txt_remarks = $_POST['txt_remarks'];
      $dropdown_status = $_POST['dropdown_status'];
+     $date = date("Y-m-d H:i:s", time());
         
         
-    $array_columns = array("ctrl_no","asset_tag_no","item_no","category","serial_no","item_details","remarks","status");
-    $array_column_values = array($txt_ctrl_no,$txt_asset_tag_no,$txt_item_no,$dropdown_categories,$txt_serial_no,$txt_item_details,$txt_remarks,$dropdown_status);
+    $array_columns = array("ctrl_no","asset_tag_no","item_no","category","serial_no","item_details","remarks","status","item_added_date");
+    $array_column_values = array($txt_ctrl_no,$txt_asset_tag_no,$txt_item_no,$dropdown_categories,$txt_serial_no,$txt_item_details,$txt_remarks,$dropdown_status,$date);
         
     query_add($connection,"items",$array_columns,$array_column_values);
         

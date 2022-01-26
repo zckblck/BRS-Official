@@ -84,9 +84,7 @@ require_once('modal.php');
            });
          });
         
-        
-       
-
+  
     </script>
     
     <body >

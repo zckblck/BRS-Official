@@ -564,6 +564,7 @@ while($row = $result->fetch_assoc() )
     $item_details = $row['item_details'];
     $remarks = $row['remarks'];
     $status = $row['status'];
+    $borrowed_by = $row['borrowed_by'];
     
     $counter++;
 
@@ -577,6 +578,7 @@ while($row = $result->fetch_assoc() )
             <td>$item_details</td>
             <td>$remarks</td>
             <td>$status</td>
+            <td>$borrowed_by</td>
         </tr>  "; 
     }
 

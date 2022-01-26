@@ -170,7 +170,7 @@
                                 </tr>
                             </thead>
                             
-                            <tbody id="update_modal_table_tbody">
+                            <tbody id="update_modal_table_tbody" style="text-align:center">
                                 
                                 <?php echo $tr_update ?>
                                 
@@ -283,7 +283,7 @@
                                 </tr>
                             </thead>
                             
-                            <tbody id="delete_modal_table_tbody">
+                            <tbody id="delete_modal_table_tbody" style="text-align:center">
                                 
                                 <?php echo $tr_delete ?>
                                 
@@ -520,7 +520,7 @@
                                 </tr>
                             </thead>
                             
-                            <tbody id="borrow_modal_table_tbody">
+                            <tbody id="borrow_modal_table_tbody" style="text-align:center">
                                 
                                 <?php echo $tr_borrow ?>
                                 
@@ -562,7 +562,7 @@
         </div>
         <div class="modal-body">
             <div class="row">
-                <div class="col">
+                <div class="col-3">
                      <div class="form-floating mb-3">
                           <input id="return_ctrl_no" type="text" class="form-control"  name="txt_ctrl_no" placeholder="Control Number" readonly  />
                           <label for="return_ctrl_no">Control Number</label>
@@ -606,7 +606,7 @@
 
                 </div>
                 
-                <div class="col">
+                <div class="col" style="overflow-x: auto">
                     <!-- Table Grid-->
                         <table id="return_modal_table" class="table table-hover" border=1>
                             
@@ -620,11 +620,12 @@
                                     <th>ITEM DETAILS</th>
                                     <th>REMARKS</th>
                                     <th>STATUS</th>
+                                    <th>CURRENTLY BORROWED BY</th>
                                     
                                 </tr>
                             </thead>
                             
-                            <tbody id="return_modal_table_tbody">
+                            <tbody id="return_modal_table_tbody" style="text-align:center">
                                 
                                 <?php echo $tr_return ?>
                                 
