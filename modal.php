@@ -11,8 +11,8 @@
         
     <form class="form-control"  method="post"  action="php_codes.php">
       <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Add Item</h5>
+        <div class="modal-header" style="background-color:#228B22">
+          <h5 class="modal-title" id="exampleModalLabel" style="color:white">Add Item</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -92,8 +92,8 @@
         
     <form class="form-control"  method="post"  action="php_codes.php">
       <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Update Item</h5>       
+        <div class="modal-header" style="background-color:#1E90FF">
+          <h5 class="modal-title" id="exampleModalLabel" style="color:white">Update Item</h5>       
             <input type="search" class="form-control" placeholder="Search" name="txt_search_update" id="txt_search_update">         
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
@@ -139,7 +139,7 @@
 
                       <div class="form-floating mb-3">
                           <label for="floatingInput">Status :</label>
-                            <select id="update_status" class="form-select" aria-label="Default select example" style="text-align:center" name="dropdown_status">
+                            <select id="update_status" class="form-select" aria-label="Default select example" style="text-align:center" name="dropdown_status" required>
                               <option selected>---</option>
                               <option value="AVAILABLE">AVAILABLE</option>
                               <option value="UNAVAILABLE">UNAVAILABLE</option>
@@ -151,8 +151,9 @@
                     
                 </div>
                 
-                <div class="col" style="overflow-x: auto">
+                <div class="col" style="overflow:scroll ; height:650px">
                     <!-- Table Grid-->
+                    Select to view
                         <table id="update_modal_table" class="table table-hover" border=1>
                             
                             <thead>
@@ -187,7 +188,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-success" name="btn_update_item" value="UPDATE ITEM">UPDATE</button>
+          <button type="submit" class="btn btn-primary" name="btn_update_item" value="UPDATE ITEM">UPDATE</button>
         </div>
       </div>
             
@@ -206,14 +207,14 @@
         
     <form class="form-control"  method="post"  action="php_codes.php">
       <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Delete Item</h5>
+        <div class="modal-header" style="background-color:#8B0000">
+          <h5 class="modal-title" id="exampleModalLabel" style="color:white">Delete Item</h5>
             <input type="search" class="form-control" placeholder="Search" name="txt_search_delete" id="txt_search_delete">
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
             <div class="row">
-                <div class="col">
+                <div class="col-3">
                      <div class="form-floating mb-3">
                           <input id="delete_ctrl_no" type="text" class="form-control"  name="txt_ctrl_no" placeholder="Control Number" readonly  />
                           <label for="delete_ctrl_no">Control Number</label>
@@ -265,8 +266,9 @@
                     
                 </div>
                 
-                <div class="col">
+                <div class="col" style="overflow:scroll ; height:650px">
                     <!-- Table Grid-->
+                    Select to Delete
                         <table id="delete_modal_table" class="table table-hover" border=1>
                             
                             <thead>
@@ -318,11 +320,11 @@
         <!------------------  ADD RETURNER FORM --------------------------->
     <form class="form-control"  method="post"  action="php_codes.php">
       <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Add User "Returners"</h5>                
+        <div class="modal-header" style="background-color:#228B22">
+          <h5 class="modal-title" id="exampleModalLabel" style="color:white">Add User "Returners"</h5>                
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body"  style="height: 290px !important; overflow-y: scroll">
             <div class="row">
                 <div class="col">
                     <div class="form-floating mb-3">
@@ -365,13 +367,13 @@
           <!------------------  UPDATE RETURNER FORM ---------------------------> 
     <form class="form-control"  method="post"  action="php_codes.php">
       <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Update User "Returners"</h5>                
+        <div class="modal-header" style="background-color:#1E90FF">
+          <h5 class="modal-title" id="exampleModalLabel" style="color:white">Update User "Returners"</h5>                
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body" style="height: 290px !important; overflow-y: scroll">
             <div class="row">
-                <div class="col">
+                <div class="col-4">
                     <div class="form-floating mb-3">
                           <input id="manage_returner_UPDATE_user_id" type="text" class="form-control"  name="update_txt_user_id" placeholder="User ID"  readonly/>
                           <label for="manage_returner_UPDATE_user_id">User ID</label>
@@ -398,7 +400,7 @@
                 </div>
                 
                 
-                <div class="col" style="overflow-x: auto">
+                <div class="col" style="overflow:scroll ; height:300px">
                     <!-- Table Grid-->
                     Select to view
                         <table id="manage_returner_modal_table" class="table table-hover" border=1>
@@ -446,7 +448,7 @@
         
     <form class="form-control"  method="post"  action="php_codes.php">
       <div class="modal-content">
-        <div class="modal-header">
+        <div class="modal-header" style="background-color:#FFD700">
           <h5 class="modal-title" id="exampleModalLabel">Borrow Item</h5>       
             <input type="search" class="form-control" placeholder="Search" name="txt_search_borrow" id="txt_search_borrow">         
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -496,13 +498,13 @@
                       </div>
                     
                       <div class="form-floating mb-3">
-                          <input id="date_time" type="datetime-local" class="form-control"  name="borrow_date_time" placeholder="Returning Plan Date" required / >
+                          <input id="date_time" type="date" class="form-control"  name="borrow_date_time" placeholder="Returning Plan Date" required / >
                           <label for="date_time">Returning Plan Date</label>
                       </div>
 
                 </div>
                 
-                <div class="col" style="overflow-x: auto">
+                <div class="col" style="overflow:scroll ; height:650px">
                     <!-- Table Grid-->
                         <table id="borrow_modal_table" class="table table-hover" border=1>
                             
@@ -555,8 +557,8 @@
         
     <form class="form-control"  method="post"  action="php_codes.php">
       <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Return Item</h5>       
+        <div class="modal-header" style="background-color:#A52A2A">
+          <h5 class="modal-title" id="exampleModalLabel" style="color:white">Return Item</h5>       
             <input type="search" class="form-control" placeholder="Search" name="txt_search_return" id="txt_search_return">         
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
@@ -606,7 +608,7 @@
 
                 </div>
                 
-                <div class="col" style="overflow-x: auto">
+                <div class="col" style="overflow:scroll ; height:650px">
                     <!-- Table Grid-->
                         <table id="return_modal_table" class="table table-hover" border=1>
                             
