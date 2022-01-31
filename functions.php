@@ -492,6 +492,79 @@ while($row = $result->fetch_assoc() )
 
 
 
+//------------------display on table on BORROWED LOGS MODAL adm_home.php
+$query = "SELECT * FROM borrowed_items";
+
+$result = mysqli_query($connection,$query);
+
+$tr_borrowed_items_logs = "";
+
+while($row = $result->fetch_assoc() )
+{
+    $control_no = $row['ctrl_no'];
+    $asset_tag_no = $row['asset_tag_no'];
+    $item_no = $row['item_no'];
+    $category = $row['category'];
+    $serial_no = $row['serial_no'];
+    $item_details = $row['item_details'];
+    $remarks = $row['remarks'];
+    $status = $row['status'];
+    $returning_plan_date = $row['returning_plan_date'];
+    $borrowed_date = $row['borrowed_date'];
+    $borrowed_by = $row['borrowed_by'];
+    
+    $tr_borrowed_items_logs .= "<tr>
+            <td>$control_no</td>
+            <td>$asset_tag_no</td>
+            <td>$item_no</td>
+            <td>$category</td>
+            <td>$serial_no</td>
+            <td>$item_details</td>
+            <td>$remarks</td>
+            <td>$status</td>
+            <td>$returning_plan_date</td>
+            <td>$borrowed_date</td>
+            <td>$borrowed_by</td>
+        </tr>  "; 
+    }
+
+
+
+
+//------------------display on table on RETURNED LOGS MODAL adm_home.php
+$query = "SELECT * FROM returned_items";
+
+$result = mysqli_query($connection,$query);
+
+$tr_returned_items_logs = "";
+
+while($row = $result->fetch_assoc() )
+{
+    $control_no = $row['ctrl_no'];
+    $asset_tag_no = $row['asset_tag_no'];
+    $item_no = $row['item_no'];
+    $category = $row['category'];
+    $serial_no = $row['serial_no'];
+    $item_details = $row['item_details'];
+    $remarks = $row['remarks'];
+    $status = $row['status'];
+    $returned_date = $row['returned_date'];
+    $returned_by = $row['returned_by'];
+    
+    $tr_returned_items_logs .= "<tr>
+            <td>$control_no</td>
+            <td>$asset_tag_no</td>
+            <td>$item_no</td>
+            <td>$category</td>
+            <td>$serial_no</td>
+            <td>$item_details</td>
+            <td>$remarks</td>
+            <td>$status</td>
+            <td>$returned_date</td>
+            <td>$returned_by</td>
+        </tr>  "; 
+    }
+
 
 
 

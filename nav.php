@@ -84,6 +84,26 @@ require_once('modal.php');
            });
          });
         
+        //LIVE SEARCH for BORROWED LOGS modal
+         $(document).ready(function(){
+           $("#txt_search_borrowed_logs").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+             $("#borrowed_logs_modal_table_tbody tr").filter(function() {
+               $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+             });
+           });
+         });
+        
+        //LIVE SEARCH for RETURNED LOGS modal
+         $(document).ready(function(){
+           $("#txt_search_returned_logs").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+             $("#returned_logs_modal_table_tbody tr").filter(function() {
+               $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+             });
+           });
+         });
+        
         //LIMIT PREVIOUS DATE ON BORROW RETURNING_PLAN_DATE
         $(function(){
             var dtToday = new Date();
@@ -124,9 +144,7 @@ require_once('modal.php');
                             ?>
                               
                               <li class="nav-item dropdown">
-                              <a class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Manage Items
-                              </a>
+                              <a class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Manage Items</a>
                               <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
                                 <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#ADD_MODAL" data-bs-whatever="@mdo">Add New Item</a></li> <!-- CHANGE DATA-BS-TARGET NAME == MODAL ID -->
                                 <li><a class="dropdown-item" data-bs-toggle="modal"  data-bs-target="#UPDATE_MODAL" data-bs-whatever="@mdo">Update</a></li>
@@ -141,6 +159,18 @@ require_once('modal.php');
                               </a>
                               <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown"> 
                                 <li><a class="dropdown-item" data-bs-toggle="modal"  data-bs-target="#MANAGE_RETURNER_MODAL" data-bs-whatever="@mdo">Manage Users</a></li> 
+                              </ul>
+                            </li>
+                              
+                              
+                              
+                              <li class="nav-item dropdown">
+                              <a class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Logs</a>
+                                  
+                              <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                                <li><a class="dropdown-item" data-bs-toggle="modal"  data-bs-target="#BORROWED_LOGS_MODAL" data-bs-whatever="@mdo">View Borrowed Logs</a></li>
+                                <li><a class="dropdown-item" data-bs-toggle="modal"  data-bs-target="#RETURNED_LOGS_MODAL" data-bs-whatever="@mdo">View Returned Logs</a></li>
+                                  
                               </ul>
                             </li>
                               

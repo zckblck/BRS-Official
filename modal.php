@@ -310,7 +310,7 @@
 </div>
          
 </div>
-                              
+
 
 
 <!---------------------------------------  MANAGE RETURNER MODAL -------------------------------------->
@@ -321,10 +321,10 @@
     <form class="form-control"  method="post"  action="php_codes.php">
       <div class="modal-content">
         <div class="modal-header" style="background-color:#228B22">
-          <h5 class="modal-title" id="exampleModalLabel" style="color:white">Add User "Returners"</h5>                
+          <h5 class="modal-title" id="exampleModalLabel" style="color:white">Add User "Returners"</h5>             
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body"  style="height: 290px !important; overflow-y: scroll">
+        <div class="modal-body"><!--   style="height: 280px !important; overflow-y: scroll" -->
             <div class="row">
                 <div class="col">
                     <div class="form-floating mb-3">
@@ -371,7 +371,7 @@
           <h5 class="modal-title" id="exampleModalLabel" style="color:white">Update User "Returners"</h5>                
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body" style="height: 290px !important; overflow-y: scroll">
+        <div class="modal-body"><!--   style="height: 280px !important; overflow-y: scroll" -->
             <div class="row">
                 <div class="col-4">
                     <div class="form-floating mb-3">
@@ -435,6 +435,138 @@
 </div>
          
 </div>
+
+
+
+<!--------------------------------------- BORROWED LOGS MODAL -------------------------------------->
+<div class="modal fade" id="BORROWED_LOGS_MODAL" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="display:none"> <!-- CHANGE ID NAME FOR MODAL -->
+    <div class="modal-dialog modal-xl">
+        
+    <form class="form-control"  method="post">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color:#FFD700">
+          <h5 class="modal-title" id="exampleModalLabel" style="color:white">Borrowed Logs</h5>       
+            <input type="search" class="form-control" placeholder="Search" name="txt_search_borrowed_logs" id="txt_search_borrowed_logs">         
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                
+                <div class="col" style="overflow:scroll ; height:650px">
+                    <!-- Table Grid-->
+                        <table class="table table-hover" border=1>
+                            
+                            <thead>
+                                <tr style="text-align:center" padding: 70px 0;>
+                                    <th style="font-size:13px">CONTROL NUMBER</th>
+                                    <th style="font-size:13px">ASSET TAG NUMBER</th>
+                                    <th style="font-size:13px">ITEM NUMBER</th>
+                                    <th style="font-size:13px">CATEGORY</th>
+                                    <th style="font-size:13px">SERIAL NUMBER</th>
+                                    <th style="font-size:13px">ITEM DETAILS</th>
+                                    <th style="font-size:13px">REMARKS</th>
+                                    <th style="font-size:13px">STATUS</th>
+                                    <th style="font-size:13px">RETURNING PLAN DATE</th>
+                                    <th style="font-size:13px">BORROWED DATE</th>
+                                    <th style="font-size:13px">BORROWED BY</th>
+                                    
+                                </tr>
+                            </thead>
+                            
+                            <tbody id="borrowed_logs_modal_table_tbody" style="text-align:center">
+                                
+                                <?php echo $tr_borrowed_items_logs ?>
+                                
+                            </tbody>
+                            
+                        </table>
+                </div>
+                
+            </div>
+          
+
+
+         
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+            
+    </form>
+</div>
+         
+</div>
+
+
+
+<!--------------------------------------- RETURNED LOGS MODAL -------------------------------------->
+<div class="modal fade" id="RETURNED_LOGS_MODAL" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="display:none"> <!-- CHANGE ID NAME FOR MODAL -->
+    <div class="modal-dialog modal-xl">
+        
+    <form class="form-control"  method="post">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color:#A52A2A">
+          <h5 class="modal-title" id="exampleModalLabel" style="color:white">Returned Logs</h5>       
+            <input type="search" class="form-control" placeholder="Search" name="txt_search_returned_logs" id="txt_search_returned_logs">         
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                
+                <div class="col" style="overflow:scroll ; height:650px">
+                    <!-- Table Grid-->
+                        <table class="table table-hover" border=1>
+                            
+                            <thead>
+                                <tr style="text-align:center" padding: 70px 0;>
+                                    <th style="font-size:13px">CONTROL NUMBER</th>
+                                    <th style="font-size:13px">ASSET TAG NUMBER</th>
+                                    <th style="font-size:13px">ITEM NUMBER</th>
+                                    <th style="font-size:13px">CATEGORY</th>
+                                    <th style="font-size:13px">SERIAL NUMBER</th>
+                                    <th style="font-size:13px">ITEM DETAILS</th>
+                                    <th style="font-size:13px">REMARKS</th>
+                                    <th style="font-size:13px">STATUS</th>
+                                    <th style="font-size:13px">RETURNED DATE</th>
+                                    <th style="font-size:13px">RETURNED BY</th>
+                                    
+                                </tr>
+                            </thead>
+                            
+                            <tbody id="returned_logs_modal_table_tbody" style="text-align:center">
+                                
+                                <?php echo $tr_returned_items_logs ?>
+                                
+                            </tbody>
+                            
+                        </table>
+                </div>
+                
+            </div>
+          
+
+
+         
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+            
+    </form>
+</div>
+         
+</div>
+
+
+
+
+
+
+
+
+
 
 
 
