@@ -41,7 +41,7 @@ require_once('connection.php');
                     
                      <!-- LOGIN -->
                        <form class="form-control"  method="post"  action="php_codes.php" style="background-color : #1c2729">
-                            <h2 style="color : #FFFFFF">Login</h2>
+                            <h2 style="color:#FFFFFF">Login</h2>
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="floatingInput" name="txt_username" placeholder="User Name" required />
                                 <label for="floatingInput">User Name</label>

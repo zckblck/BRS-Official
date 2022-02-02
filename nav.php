@@ -165,7 +165,7 @@ require_once('modal.php');
                               
                               
                               <li class="nav-item dropdown">
-                              <a class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Logs</a>
+                              <a class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">View Logs</a>
                                   
                               <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
                                 <li><a class="dropdown-item" data-bs-toggle="modal"  data-bs-target="#BORROWED_LOGS_MODAL" data-bs-whatever="@mdo">View Borrowed Logs</a></li>
