@@ -490,6 +490,63 @@ while($row = $result->fetch_assoc() )
     }
 
 
+//------------------display on table on ACTIVITY LOGS MODAL adm_home.php
+$query = "SELECT * FROM logs";
+
+$result = mysqli_query($connection,$query);
+
+$tr_activity_logs = "";
+
+while($row = $result->fetch_assoc() )
+{
+    $log_type = $row['log_type'];
+    $dated_log = $row['dated_log'];
+    $user_id = $row['user_id'];
+    $user_name = $row['user_name'];
+    $department = $row['department'];
+    $control_no = $row['ctrl_no'];
+    $asset_tag_no = $row['asset_tag_no'];
+    $item_no = $row['item_no'];
+    $category = $row['category'];
+    $serial_no = $row['serial_no'];
+    $item_details = $row['item_details'];
+    $item_added_date = $row['item_added_date'];
+    $remarks = $row['remarks'];
+    $status = $row['status'];
+    $returning_plan_date = $row['returning_plan_date'];
+    $borrowed_date = $row['borrowed_date'];
+    $borrowed_by = $row['borrowed_by'];
+    $returned_date = $row['returned_date'];
+    $returned_by = $row['returned_by'];
+    
+    $tr_activity_logs .= "<tr>
+            <td>$log_type</td>
+            <td>$dated_log</td>
+            <td>$user_id</td>
+            <td>$user_name</td>
+            <td>$department</td>
+            <td>$control_no</td>
+            <td>$asset_tag_no</td>
+            <td>$item_no</td>
+            <td>$category</td>
+            <td>$serial_no</td>
+            <td>$item_details</td>
+            <td>$item_added_date</td>
+            <td>$remarks</td>
+            <td>$status</td>
+            <td>$returning_plan_date</td>
+            <td>$borrowed_date</td>
+            <td>$borrowed_by</td>
+            <td>$returned_date</td>
+            <td>$returned_by</td>
+        </tr>  "; 
+    }
+
+
+
+
+
+
 
 
 //------------------display on table on BORROWED LOGS MODAL adm_home.php

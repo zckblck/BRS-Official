@@ -87,13 +87,19 @@ if(ISSET($_POST['btn_add_item']))
      $txt_remarks = $_POST['txt_remarks'];
      $dropdown_status = $_POST['dropdown_status'];
      $date = date("Y-m-d H:i:s", time());
+     $log_type = "ADD ITEM";
+    
+    $array_columns0 = array("log_type","dated_log","user_id","user_name","department","ctrl_no","asset_tag_no","item_no","category","serial_no","item_details","item_added_date","remarks","status","returning_plan_date","borrowed_date","borrowed_by","returned_date","returned_by");
+    $array_column_values0 = array($log_type,$date,"","","",$txt_ctrl_no,$txt_asset_tag_no,$txt_item_no,$dropdown_categories,$txt_serial_no,$txt_item_details,$date,$txt_remarks,$dropdown_status,"","","","","");    
+    
+    query_add($connection,"logs",$array_columns0,$array_column_values0);
         
-        
+    
     $array_columns = array("ctrl_no","asset_tag_no","item_no","category","serial_no","item_details","remarks","status","item_added_date");
     $array_column_values = array($txt_ctrl_no,$txt_asset_tag_no,$txt_item_no,$dropdown_categories,$txt_serial_no,$txt_item_details,$txt_remarks,$dropdown_status,$date);
-        
+     
     query_add($connection,"items",$array_columns,$array_column_values);
-        
+    
     echo"<script>alert('Item Added Successfully');
 				      window.location.href = 'adm_home.php';
                       </script>";

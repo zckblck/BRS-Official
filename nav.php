@@ -84,6 +84,16 @@ require_once('modal.php');
            });
          });
         
+        //LIVE SEARCH for ACTIVITY LOGS modal
+         $(document).ready(function(){
+           $("#txt_search_activity_logs").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+             $("#activity_logs_modal_table_tbody tr").filter(function() {
+               $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+             });
+           });
+         });
+        
         //LIVE SEARCH for BORROWED LOGS modal
          $(document).ready(function(){
            $("#txt_search_borrowed_logs").on("keyup", function() {
@@ -168,6 +178,7 @@ require_once('modal.php');
                               <a class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">View Logs</a>
                                   
                               <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                                <li><a class="dropdown-item" data-bs-toggle="modal"  data-bs-target="#ACTIVITY_LOGS_MODAL" data-bs-whatever="@mdo">Activity Logs</a></li>
                                 <li><a class="dropdown-item" data-bs-toggle="modal"  data-bs-target="#BORROWED_LOGS_MODAL" data-bs-whatever="@mdo">View Borrowed Logs</a></li>
                                 <li><a class="dropdown-item" data-bs-toggle="modal"  data-bs-target="#RETURNED_LOGS_MODAL" data-bs-whatever="@mdo">View Returned Logs</a></li>
                                   

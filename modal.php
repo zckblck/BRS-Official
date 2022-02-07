@@ -432,6 +432,72 @@
 
 
 
+<!--------------------------------------- ACTIVITY LOGS MODAL -------------------------------------->
+<div class="modal fade" id="ACTIVITY_LOGS_MODAL" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="display:none"> <!-- CHANGE ID NAME FOR MODAL -->
+    <div class="modal-dialog modal-xl">
+        
+    <form class="form-control"  method="post">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color:#597567">
+          <h5 class="modal-title" id="exampleModalLabel" style="color:white">Activity Logs</h5>       
+            <input type="search" class="form-control" placeholder="Search" name="txt_search_activity_logs" id="txt_search_activity_logs">         
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                
+                <div class="col" style="overflow:scroll ; height:650px">
+                    <!-- Table Grid-->
+                        <table class="table table-hover" border=1>
+                            
+                            <thead>
+                                <tr style="text-align:center" padding: 70px 0;>
+                                    <th style="font-size:13px">LOG TYPE</th>
+                                    <th style="font-size:13px">LOG DATE</th>
+                                    <th style="font-size:13px">USER ID</th>
+                                    <th style="font-size:13px">USER NAME</th>
+                                    <th style="font-size:13px">DEPARTMENT</th>
+                                    <th style="font-size:13px">CONTROL NUMBER</th>
+                                    <th style="font-size:13px">ASSET TAG NUMBER</th>
+                                    <th style="font-size:13px">ITEM NUMBER</th>
+                                    <th style="font-size:13px">CATEGORY</th>
+                                    <th style="font-size:13px">SERIAL NUMBER</th>
+                                    <th style="font-size:13px">ITEM DETAILS</th>
+                                    <th style="font-size:13px">ITEM ADDED DATE</th>
+                                    <th style="font-size:13px">REMARKS</th>
+                                    <th style="font-size:13px">STATUS</th>
+                                    <th style="font-size:13px">RETURNING PLAN DATE</th>
+                                    <th style="font-size:13px">BORROWED DATE</th>
+                                    <th style="font-size:13px">BORROWED BY</th>
+                                    <th style="font-size:13px">RETURNED DATE</th>
+                                    <th style="font-size:13px">RETURNED BY</th>
+                                    
+                                </tr>
+                            </thead>
+                            
+                            <tbody id="activity_logs_modal_table_tbody" style="text-align:center">
+                                
+                                <?php echo $tr_activity_logs ?>
+                                
+                            </tbody>
+                            
+                        </table>
+                </div>
+                
+            </div>
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+            
+    </form>
+</div>
+         
+</div>
+
+
 <!--------------------------------------- BORROWED LOGS MODAL -------------------------------------->
 <div class="modal fade" id="BORROWED_LOGS_MODAL" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="display:none"> <!-- CHANGE ID NAME FOR MODAL -->
     <div class="modal-dialog modal-xl">
