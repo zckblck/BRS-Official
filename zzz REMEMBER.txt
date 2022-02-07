@@ -1,0 +1,6 @@
+if create new BRS for other department:
+
+change connection.php databse
+change index.php link
+copy categories table from original BRS
+copy department table from original BRS
