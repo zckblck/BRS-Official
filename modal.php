@@ -454,6 +454,7 @@
                                 <tr style="text-align:center" padding: 70px 0;>
                                     <th style="font-size:13px">LOG TYPE</th>
                                     <th style="font-size:13px">LOG DATE</th>
+                                    <th style="font-size:13px">LOG BY</th>
                                     <th style="font-size:13px">USER ID</th>
                                     <th style="font-size:13px">USER NAME</th>
                                     <th style="font-size:13px">DEPARTMENT</th>

@@ -86,11 +86,13 @@ if(ISSET($_POST['btn_add_item']))
      $txt_item_details = $_POST['txt_item_details'];
      $txt_remarks = $_POST['txt_remarks'];
      $dropdown_status = $_POST['dropdown_status'];
+        
      $date = date("Y-m-d H:i:s", time());
      $log_type = "ADD ITEM";
+     $log_by = $_SESSION['username'];
     
-    $array_columns0 = array("log_type","dated_log","user_id","user_name","department","ctrl_no","asset_tag_no","item_no","category","serial_no","item_details","item_added_date","remarks","status","returning_plan_date","borrowed_date","borrowed_by","returned_date","returned_by");
-    $array_column_values0 = array($log_type,$date,"","","",$txt_ctrl_no,$txt_asset_tag_no,$txt_item_no,$dropdown_categories,$txt_serial_no,$txt_item_details,$date,$txt_remarks,$dropdown_status,"","","","","");    
+    $array_columns0 = array("log_type","dated_log","log_by","user_id","user_name","department","ctrl_no","asset_tag_no","item_no","category","serial_no","item_details","item_added_date","remarks","status","returning_plan_date","borrowed_date","borrowed_by","returned_date","returned_by");
+    $array_column_values0 = array($log_type,$date,$log_by,"","","",$txt_ctrl_no,$txt_asset_tag_no,$txt_item_no,$dropdown_categories,$txt_serial_no,$txt_item_details,$date,$txt_remarks,$dropdown_status,"","","","","");    
     
     query_add($connection,"logs",$array_columns0,$array_column_values0);
         
@@ -137,6 +139,15 @@ if(ISSET($_POST['btn_update_item']))
      $txt_item_details = $_POST['txt_item_details'];
      $txt_remarks = $_POST['txt_remarks'];
      $dropdown_status = $_POST['dropdown_status'];
+        
+     $date = date("Y-m-d H:i:s", time());
+     $log_type = "UPDATE ITEM";
+     $log_by = $_SESSION['username'];
+         
+    $array_columns0 = array("log_type","dated_log","log_by","user_id","user_name","department","ctrl_no","asset_tag_no","item_no","category","serial_no","item_details","item_added_date","remarks","status","returning_plan_date","borrowed_date","borrowed_by","returned_date","returned_by");
+    $array_column_values0 = array($log_type,$date,$log_by,"","","",$txt_ctrl_no,$txt_asset_tag_no,$txt_item_no,$dropdown_categories,$txt_serial_no,$txt_item_details,"",$txt_remarks,$dropdown_status,"","","","","");    
+    
+    query_add($connection,"logs",$array_columns0,$array_column_values0);
         
         
     $array_columns = array("ctrl_no","asset_tag_no","item_no","category","serial_no","item_details","remarks","status");
@@ -196,6 +207,22 @@ if(ISSET($_POST['btn_delete_item']))
  
      $txt_ctrl_no = $_POST['txt_ctrl_no'];
         
+     $txt_asset_tag_no = $_POST['txt_asset_tag_no'];
+     $txt_item_no = $_POST['txt_item_no'];
+     $txt_serial_no = $_POST['txt_serial_no'];
+     $txt_item_details = $_POST['txt_item_details'];
+     $txt_remarks = $_POST['txt_remarks'];
+        
+     $date = date("Y-m-d H:i:s", time());
+     $log_type = "DELETE ITEM";
+     $log_by = $_SESSION['username'];
+        
+    $array_columns0 = array("log_type","dated_log","log_by","user_id","user_name","department","ctrl_no","asset_tag_no","item_no","category","serial_no","item_details","item_added_date","remarks","status","returning_plan_date","borrowed_date","borrowed_by","returned_date","returned_by");
+    $array_column_values0 = array($log_type,$date,$log_by,"","","",$txt_ctrl_no,$txt_asset_tag_no,$txt_item_no,"",$txt_serial_no,$txt_item_details,"",$txt_remarks,"","","","","","");    
+    
+    query_add($connection,"logs",$array_columns0,$array_column_values0);
+      
+    
     query_delete($connection,"items"," ctrl_no = '$txt_ctrl_no'");
         
     echo"<script>alert('Item Deleted Successfully');
@@ -239,7 +266,7 @@ if(!empty($_POST['ajax_delete_control_no']))
 
 
 
-//-------------------------------------MANAGE RETURNER  ADD BUTTON  MODAL.PHP
+//-------------------------------------MANAGE USER RETURNER  ADD BUTTON  MODAL.PHP
 
 if(ISSET($_POST['btn_add_manage_returner']))
 {
@@ -251,6 +278,16 @@ if(ISSET($_POST['btn_add_manage_returner']))
         $dropdown_department = $_POST['dropdown_department'];
 
         $txt_password = sha1($txt_password);
+        
+        
+        $date = date("Y-m-d H:i:s", time());
+        $log_type = "ADD USER";
+        $log_by = $_SESSION['username'];
+
+        $array_columns0 = array("log_type","dated_log","log_by","user_id","user_name","department","ctrl_no","asset_tag_no","item_no","category","serial_no","item_details","item_added_date","remarks","status","returning_plan_date","borrowed_date","borrowed_by","returned_date","returned_by");
+        $array_column_values0 = array($log_type,$date,$log_by,$txt_user_id,$txt_user_name,$dropdown_department,"","","","","","","","","","","","","","");    
+        query_add($connection,"logs",$array_columns0,$array_column_values0);
+        
 
         $array_columns = array("user_id","user_name","pass","department");
         $array_column_values = array($txt_user_id,$txt_user_name,$txt_password,$dropdown_department);
@@ -271,7 +308,7 @@ if(ISSET($_POST['btn_add_manage_returner']))
 
 
 
-//-------------------------------------MANAGE RETURNER UPDATE BUTTON MODAL.PHP //MAIN QUERY
+//-------------------------------------MANAGE USER RETURNER UPDATE BUTTON MODAL.PHP //MAIN QUERY
 
 if(ISSET($_POST['btn_update_manage_returner']))
 {
@@ -285,6 +322,14 @@ if(ISSET($_POST['btn_update_manage_returner']))
         $update_dropdown_department = $_POST['update_dropdown_department'];
 
         $update_txt_password = sha1($update_txt_password);
+        
+        $date = date("Y-m-d H:i:s", time());
+        $log_type = "UPDATE USER";
+        $log_by = $_SESSION['username'];
+
+        $array_columns0 = array("log_type","dated_log","log_by","user_id","user_name","department","ctrl_no","asset_tag_no","item_no","category","serial_no","item_details","item_added_date","remarks","status","returning_plan_date","borrowed_date","borrowed_by","returned_date","returned_by");
+        $array_column_values0 = array($log_type,$date,$log_by,$update_txt_user_id,$update_txt_user_name,$update_dropdown_department,"","","","","","","","","","","","","","");    
+        query_add($connection,"logs",$array_columns0,$array_column_values0);
 
         
         $array_columns = array("user_id","user_name","pass","department");
@@ -377,6 +422,16 @@ if(ISSET($_POST['btn_borrow_item']))
      $returning_plan_date = $_POST['borrow_date_time'];
      $date = date("Y-m-d H:i:s", time());
      $borrowed_by = $_SESSION['username'];
+    
+     $log_type = "BORROW";
+    
+    
+    $array_columns0 = array("log_type","dated_log","log_by","user_id","user_name","department","ctrl_no","asset_tag_no","item_no","category","serial_no","item_details","item_added_date","remarks","status","returning_plan_date","borrowed_date","borrowed_by","returned_date","returned_by");
+    $array_column_values0 = array($log_type,$date,$borrowed_by,"","","",$txt_ctrl_no,$txt_asset_tag_no,$txt_item_no,$borrow_dropdown_categories,$txt_serial_no,$txt_item_details,"",$txt_remarks,$dropdown_status,$returning_plan_date,$date,$borrowed_by,"",""); 
+    
+    query_add($connection,"logs",$array_columns0,$array_column_values0);
+    
+    
           
     $array_columns = array("ctrl_no","asset_tag_no","item_no","category","serial_no","item_details","remarks","status","returning_plan_date","borrowed_date","borrowed_by");
     $array_column_values = array($txt_ctrl_no,$txt_asset_tag_no,$txt_item_no,$borrow_dropdown_categories,$txt_serial_no,$txt_item_details,$txt_remarks,$dropdown_status,$returning_plan_date,$date,$borrowed_by);
@@ -460,6 +515,16 @@ if(ISSET($_POST['btn_return_item']))
      $dropdown_status = "RETURNED";
      $date = date("Y-m-d H:i:s", time());
      $returned_by = $_SESSION['username'];
+    
+     $log_type = "RETURNED";
+    
+    
+    $array_columns0 = array("log_type","dated_log","log_by","user_id","user_name","department","ctrl_no","asset_tag_no","item_no","category","serial_no","item_details","item_added_date","remarks","status","returning_plan_date","borrowed_date","borrowed_by","returned_date","returned_by");
+    $array_column_values0 = array($log_type,$date,$returned_by,"","","",$txt_ctrl_no,$txt_asset_tag_no,$txt_item_no,$return_dropdown_categories,$txt_serial_no,$txt_item_details,"",$txt_remarks,$dropdown_status,"","","",$date,$returned_by); 
+    
+    query_add($connection,"logs",$array_columns0,$array_column_values0);
+    
+    
           
     $array_columns = array("ctrl_no","asset_tag_no","item_no","category","serial_no","item_details","remarks","status","returned_date","returned_by");
     $array_column_values = array($txt_ctrl_no,$txt_asset_tag_no,$txt_item_no,$return_dropdown_categories,$txt_serial_no,$txt_item_details,$txt_remarks,$dropdown_status,$date,$returned_by);

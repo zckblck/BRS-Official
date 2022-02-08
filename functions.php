@@ -490,6 +490,8 @@ while($row = $result->fetch_assoc() )
     }
 
 
+
+
 //------------------display on table on ACTIVITY LOGS MODAL adm_home.php
 $query = "SELECT * FROM logs";
 
@@ -501,6 +503,7 @@ while($row = $result->fetch_assoc() )
 {
     $log_type = $row['log_type'];
     $dated_log = $row['dated_log'];
+    $log_by = $row['log_by'];
     $user_id = $row['user_id'];
     $user_name = $row['user_name'];
     $department = $row['department'];
@@ -522,6 +525,7 @@ while($row = $result->fetch_assoc() )
     $tr_activity_logs .= "<tr>
             <td>$log_type</td>
             <td>$dated_log</td>
+            <td>$log_by</td>
             <td>$user_id</td>
             <td>$user_name</td>
             <td>$department</td>
