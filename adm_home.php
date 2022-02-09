@@ -15,6 +15,7 @@ require_once('nav.php')
     
  
     <body>
+        
         <!--
         <script type="text/javascript">
             
@@ -47,15 +48,10 @@ require_once('nav.php')
         </script>
        -->
         
-   
-        
-        
-        
-        
-        
   
-          <div class="container">
+          <div class="parentContainer">
               
+            <div id='intro'>You can drag this element.</div>
               
               <!-- ROW 1 -->
               <div class="row" style="height:50px">

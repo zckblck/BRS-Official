@@ -17,13 +17,18 @@ require_once('modal.php');
         <script src="./Bootstrap513/jquery.min.js"></script> <!-- JQuery -->
         <script type="text/javascript" src="Bootstrap513/charts.loader.js"></script><!-- google charts-->
         <script src="Bootstrap513/chart.min.js"></script> <!-- charts.js -->
+         
         <script src="./modal_onclick_select.js"></script> <!-- modal_onclick_select.js -->
          
          
         <script src="./Bootstrap513/moment.min.js"></script> <!-- cdn moment js -->
         <script src="Bootstrap513/bootstrap-datetimepicker.min.js"></script> <!-- cdn js -->
         <script src="Bootstrap513/bootstrap-datetimepicker.min.css"></script> <!-- cdn css -->
-   
+         
+         
+        <link src="Bootstrap513/jquery-ui.css" rel="stylesheet" type="text/css"/> <!-- for dragable div -->
+        <script src="Bootstrap513/jquery-ui.min.js"></script> <!-- for dragable div -->
+ 
     </head>
     
     <!--java script -->
@@ -131,6 +136,11 @@ require_once('modal.php');
             $('#date_time').attr('min', minDate);
         });
         
+        
+        $(document).ready(function () {
+        $('#intro').draggable({});
+    });
+        
     </script>
     
     <body >
@@ -208,10 +218,10 @@ require_once('modal.php');
                                 <div class="col">
                                     <div class="row">
                                         <div class="col">
-                                            <input type="search" class="form-control" id="floatingInput" placeholder="Search" name="txt_search">
+                                            <!-- <input type="search" class="form-control" id="floatingInput" placeholder="Search" name="txt_search"> -->
                                         </div>
                                         <div class="col">
-                                            <button class="btn btn-outline-success" type="submit" name="search_btn_dbs">Search</button>
+                                            <!-- <button class="btn btn-outline-success" type="submit" name="search_btn_dbs">Search</button> -->
                                         </div>
                                     </div>
                                 </div>
