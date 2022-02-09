@@ -1,6 +1,5 @@
 <?php 
     require_once('functions.php');
-    require_once('export_all_logs.php');
 ?>
 
 
@@ -155,7 +154,7 @@
                 <div class="col" style="overflow:scroll ; height:650px">
                     <!-- Table Grid-->
                     Select to view
-                        <table id="update_modal_table" class="table table-hover table-striped border-dark" border=1>
+                        <table id="update_modal_table" class="table table-hover" border=1>
                             
                             <thead>
                                 <tr style="text-align:center" padding: 70px 0;>
@@ -267,7 +266,7 @@
                 <div class="col" style="overflow:scroll ; height:650px">
                     <!-- Table Grid-->
                     Select to Delete
-                        <table id="delete_modal_table" class="table table-hover table-striped border-dark" border=1>
+                        <table id="delete_modal_table" class="table table-hover" border=1>
                             
                             <thead>
                                 <tr style="text-align:center" padding: 70px 0;>
@@ -398,7 +397,7 @@
                 <div class="col" style="overflow:scroll ; height:300px">
                     <!-- Table Grid-->
                     Select to view
-                        <table id="manage_returner_modal_table" class="table table-hover table-striped border-dark" border=1>
+                        <table id="manage_returner_modal_table" class="table table-hover" border=1>
                             
                             <thead>
                                 <tr style="text-align:center" padding: 70px 0;>
@@ -441,7 +440,7 @@
       <div class="modal-content">
         <div class="modal-header" style="background-color:#597567">
           <h5 class="modal-title" id="exampleModalLabel" style="color:white">Activity Logs</h5>       
-            <input type="search" class="form-control" placeholder="Search" name="txt_search_activity_logs" id="txt_search_activity_logs"> 
+            <input type="search" class="form-control" placeholder="Search" name="txt_search_activity_logs" id="txt_search_activity_logs">         
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -449,7 +448,7 @@
                 
                 <div class="col" style="overflow:scroll ; height:650px">
                     <!-- Table Grid-->
-                        <table class="table table-hover table-striped border-dark" border=1>
+                        <table class="table table-hover" border=1>
                             
                             <thead>
                                 <tr style="text-align:center" padding: 70px 0;>
@@ -490,7 +489,6 @@
           
         </div>
         <div class="modal-footer">
-          <a class="btn btn-success" href="<?php echo $filename; ?>" target="_blank" download><strong>Export to Excel</strong></a>
           <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
@@ -517,7 +515,7 @@
                 
                 <div class="col" style="overflow:scroll ; height:650px">
                     <!-- Table Grid-->
-                        <table class="table table-hover table-striped border-dark" border=1>
+                        <table class="table table-hover" border=1>
                             
                             <thead>
                                 <tr style="text-align:center" padding: 70px 0;>
@@ -576,7 +574,7 @@
                 
                 <div class="col" style="overflow:scroll ; height:650px">
                     <!-- Table Grid-->
-                        <table class="table table-hover table-striped border-dark" border=1>
+                        <table class="table table-hover" border=1>
                             
                             <thead>
                                 <tr style="text-align:center" padding: 70px 0;>
