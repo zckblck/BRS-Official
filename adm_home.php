@@ -66,7 +66,7 @@ require_once('nav.php')
               
               
               <!-- ROW 1 -->
-              <div class="row" style="height:65px">
+              <div class="row" style="height:50px">
               </div>
 
               
@@ -82,6 +82,13 @@ require_once('nav.php')
                                     <h5 style="text-align:center">AVAILABLE ITEMS</h5>
                                 </div>
                                 <div class="card-block">
+                                    <strong>Total Available Assets :</strong> 
+                                </div>
+                                <div class="card-block">
+                                    <h3 style="text-align:right ; padding-right:20px"><?php echo $count_avail_items ?></h3>                    
+                                </div>
+                                <div class="card-block">
+                                    
                                     <div class="col" style="overflow:scroll ; height:650px">
                                 <!-- Table Grid-->
                                     <table class="table table-hover table-striped border-dark" border=1>
@@ -100,7 +107,7 @@ require_once('nav.php')
                                             </tr>
                                         </thead>
 
-                                        <tbody id="borrowed_logs_modal_table_tbody" style="text-align:center">
+                                        <tbody style="text-align:center">
 
                                             <?php echo $tr_borrow ?>
 
@@ -118,9 +125,15 @@ require_once('nav.php')
                                     <h5 style="text-align:center">BORROWED ITEMS</h5>
                                 </div>
                                 <div class="card-block">
+                                    <strong>Total Borrowed Assets :</strong> 
+                                </div>
+                                <div class="card-block">
+                                    <h3 style="text-align:right ; padding-right:20px"><?php echo $count_borrowed_items ?></h3>                    
+                                </div>
+                                <div class="card-block">
                                     <div class="col" style="overflow:scroll ; height:650px">
                                 <!-- Table Grid-->
-                                    <table id="return_modal_table" class="table table-hover table-striped border-dark" border=1>
+                                    <table class="table table-hover table-striped border-dark" border=1>
 
                                         <thead>
                                             <tr style="text-align:center" padding: 70px 0;>
@@ -137,7 +150,7 @@ require_once('nav.php')
                                             </tr>
                                         </thead>
 
-                                        <tbody id="return_modal_table_tbody" style="text-align:center">
+                                        <tbody style="text-align:center">
 
                                             <?php echo $tr_return ?>
 
@@ -152,10 +165,13 @@ require_once('nav.php')
                         <div class="col">
                             <div class="card">
                                 <div class="card-header">
-                                    <h5 style="text-align:center">FOR REPAIR</h5>
+                                    <h5 style="text-align:center">ON-GOING REPAIR</h5>
                                 </div>
                                 <div class="card-block">
-                                    <label>0</label>                   
+                                    <strong>Total On-Going Repair Assets :</strong> 
+                                </div>
+                                <div class="card-block">
+                                    <h3 style="text-align:right ; padding-right:20px"><?php echo $count_ongoingRepair_items ?></h3>                  
                                 </div>
                             </div>
                         </div>
@@ -166,7 +182,10 @@ require_once('nav.php')
                                     <h5 style="text-align:center">FOR DISPOSAL</h5>
                                 </div>
                                 <div class="card-block">
-                                    <label>0</label>                    
+                                    <strong>Total For Disposal Assets :</strong> 
+                                </div>
+                                <div class="card-block">
+                                    <h3 style="text-align:right ; padding-right:20px"><?php echo $count_forDisposal_items ?></h3>                    
                                 </div>
                             </div>
                         </div>

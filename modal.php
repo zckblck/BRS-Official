@@ -1,5 +1,6 @@
 <?php 
     require_once('functions.php');
+    require_once('export_all_logs.php');
 ?>
 
 
@@ -141,8 +142,8 @@
                               <option value="UNAVAILABLE">UNAVAILABLE</option>
                               <option value="FOR DISPOSAL">FOR DISPOSAL</option>
                               <option value="FOR REPAIR">FOR REPAIR</option>
-                              <option value="FOR REPAIR">UNDER REPAIR</option>
-                              <option value="FOR REPAIR">DISPOSED</option>
+                              <option value="UNDER REPAIR">UNDER REPAIR</option>
+                              <option value="DISPOSED">DISPOSED</option>
                               <option value=""></option>
                             </select>
                       </div>
@@ -255,8 +256,8 @@
                               <option value="UNAVAILABLE">UNAVAILABLE</option>
                               <option value="FOR DISPOSAL">FOR DISPOSAL</option>
                               <option value="FOR REPAIR">FOR REPAIR</option>
-                              <option value="FOR REPAIR">UNDER REPAIR</option>
-                              <option value="FOR REPAIR">DISPOSED</option>
+                              <option value="UNDER REPAIR">UNDER REPAIR</option>
+                              <option value="DISPOSED">DISPOSED</option>
                               <option value=""></option>
                             </select>
                       </div>

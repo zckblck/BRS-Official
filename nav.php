@@ -4,7 +4,6 @@ require_once('connection.php');
 require_once('php_codes.php');
 require_once('restriction.php');
 require_once('modal.php');
-require_once('export_all_logs.php');
 
 ?>
 
@@ -205,18 +204,26 @@ require_once('export_all_logs.php');
                               <a class="nav-link disabled"><strong style="color:white">Welcome &nbsp;<?php echo $_SESSION['username']; ?></strong></a>
                             </li>
                           </ul>
-                            <div class="row">
-                                <div class="col">
-                                    <div class="row">
-                                        <div class="col">
-                                            <input type="search" class="form-control" id="floatingInput" placeholder="Search" name="txt_search">
-                                        </div>
-                                        <div class="col">
-                                            <button class="btn btn-outline-success" type="submit" name="search_btn_dbs">Search</button>
+                            <?php
+                                if($_SESSION['ROLE'] == "ADMIN")
+                                {
+                            ?>
+                                <div class="row">
+                                    <div class="col">
+
+                                        <div class="row">
+                                            <div class="col">
+                                                <button class="btn btn-warning" type="button" name="btn_borrow" data-bs-toggle="modal" data-bs-target="#BORROW_MODAL" data-bs-whatever="@mdo">BORROW</button>
+                                            </div>
+                                            <div class="col">
+                                                <button class="btn btn-danger" type="button" name="btn_return" data-bs-toggle="modal" data-bs-target="#RETURN_MODAL" data-bs-whatever="@mdo">RETURN</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                             <?php
+                                }
+                            ?>
                         </div>     
                           
                       </div>

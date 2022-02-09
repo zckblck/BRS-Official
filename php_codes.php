@@ -394,55 +394,108 @@ if(!empty($_POST['ajax_manage_returner_control_no']))
 
 if(ISSET($_POST['btn_borrow_item']))
 {
-    
-    if(ISSET($_POST['txt_ctrl_no']))
+    if($_SESSION['ROLE'] == "ADMIN")
     {
- 
-    $txt_ctrl_no = $_POST['txt_ctrl_no'];
-    $borrowed_by = $_SESSION['username'];
-        
-    $query = "UPDATE items SET status ='BORROWED' WHERE ctrl_no = '$txt_ctrl_no'";
-    $query2 = "UPDATE items SET borrowed_by = '$borrowed_by' WHERE ctrl_no = '$txt_ctrl_no'";
+        if(ISSET($_POST['txt_ctrl_no']))
+        {
 
-    $result = mysqli_query($connection,$query);
-    $result2 = mysqli_query($connection,$query2);
-    
+        $txt_ctrl_no = $_POST['txt_ctrl_no'];
+        $borrowed_by = $_SESSION['username'];
+
+        $query = "UPDATE items SET status ='BORROWED' WHERE ctrl_no = '$txt_ctrl_no'";
+        $query2 = "UPDATE items SET borrowed_by = '$borrowed_by' WHERE ctrl_no = '$txt_ctrl_no'";
+
+        $result = mysqli_query($connection,$query);
+        $result2 = mysqli_query($connection,$query2);
+
+        }
+
+
+        //to add in borrowed_items table
+         $txt_ctrl_no = $_POST['txt_ctrl_no'];
+         $txt_asset_tag_no = $_POST['txt_asset_tag_no'];
+         $txt_item_no = $_POST['txt_item_no'];
+         $borrow_dropdown_categories = $_POST['borrow_dropdown_categories'];
+         $txt_serial_no = $_POST['txt_serial_no'];
+         $txt_item_details = $_POST['txt_item_details'];
+         $txt_remarks = $_POST['txt_remarks'];
+         $dropdown_status = "BORROWED";
+         $returning_plan_date = $_POST['borrow_date_time'];
+         $date = date("Y-m-d H:i:s", time());
+         $borrowed_by = $_SESSION['username'];
+
+         $log_type = "BORROW";
+
+
+        $array_columns0 = array("log_type","dated_log","log_by","user_id","user_name","department","ctrl_no","asset_tag_no","item_no","category","serial_no","item_details","item_added_date","remarks","status","returning_plan_date","borrowed_date","borrowed_by","returned_date","returned_by");
+        $array_column_values0 = array($log_type,$date,$borrowed_by,"","","",$txt_ctrl_no,$txt_asset_tag_no,$txt_item_no,$borrow_dropdown_categories,$txt_serial_no,$txt_item_details,"",$txt_remarks,$dropdown_status,$returning_plan_date,$date,$borrowed_by,"",""); 
+
+        query_add($connection,"logs",$array_columns0,$array_column_values0);
+
+
+
+        $array_columns = array("ctrl_no","asset_tag_no","item_no","category","serial_no","item_details","remarks","status","returning_plan_date","borrowed_date","borrowed_by");
+        $array_column_values = array($txt_ctrl_no,$txt_asset_tag_no,$txt_item_no,$borrow_dropdown_categories,$txt_serial_no,$txt_item_details,$txt_remarks,$dropdown_status,$returning_plan_date,$date,$borrowed_by);
+
+        query_add($connection,"borrowed_items",$array_columns,$array_column_values);
+
+
+
+        echo"<script>alert('Item Borrowed Successfully');
+                          window.location.href = 'adm_home.php';
+                          </script>"; 
     }
-    
-    
-    //to add in borrowed_items table
-     $txt_ctrl_no = $_POST['txt_ctrl_no'];
-     $txt_asset_tag_no = $_POST['txt_asset_tag_no'];
-     $txt_item_no = $_POST['txt_item_no'];
-     $borrow_dropdown_categories = $_POST['borrow_dropdown_categories'];
-     $txt_serial_no = $_POST['txt_serial_no'];
-     $txt_item_details = $_POST['txt_item_details'];
-     $txt_remarks = $_POST['txt_remarks'];
-     $dropdown_status = "BORROWED";
-     $returning_plan_date = $_POST['borrow_date_time'];
-     $date = date("Y-m-d H:i:s", time());
-     $borrowed_by = $_SESSION['username'];
-    
-     $log_type = "BORROW";
-    
-    
-    $array_columns0 = array("log_type","dated_log","log_by","user_id","user_name","department","ctrl_no","asset_tag_no","item_no","category","serial_no","item_details","item_added_date","remarks","status","returning_plan_date","borrowed_date","borrowed_by","returned_date","returned_by");
-    $array_column_values0 = array($log_type,$date,$borrowed_by,"","","",$txt_ctrl_no,$txt_asset_tag_no,$txt_item_no,$borrow_dropdown_categories,$txt_serial_no,$txt_item_details,"",$txt_remarks,$dropdown_status,$returning_plan_date,$date,$borrowed_by,"",""); 
-    
-    query_add($connection,"logs",$array_columns0,$array_column_values0);
-    
-    
-          
-    $array_columns = array("ctrl_no","asset_tag_no","item_no","category","serial_no","item_details","remarks","status","returning_plan_date","borrowed_date","borrowed_by");
-    $array_column_values = array($txt_ctrl_no,$txt_asset_tag_no,$txt_item_no,$borrow_dropdown_categories,$txt_serial_no,$txt_item_details,$txt_remarks,$dropdown_status,$returning_plan_date,$date,$borrowed_by);
-        
-    query_add($connection,"borrowed_items",$array_columns,$array_column_values);
-    
-    
-    
-    echo"<script>alert('Item Borrowed Successfully');
-				      window.location.href = 'user_home.php';
-                      </script>"; 
+    else
+    {
+        if(ISSET($_POST['txt_ctrl_no']))
+        {
+
+        $txt_ctrl_no = $_POST['txt_ctrl_no'];
+        $borrowed_by = $_SESSION['username'];
+
+        $query = "UPDATE items SET status ='BORROWED' WHERE ctrl_no = '$txt_ctrl_no'";
+        $query2 = "UPDATE items SET borrowed_by = '$borrowed_by' WHERE ctrl_no = '$txt_ctrl_no'";
+
+        $result = mysqli_query($connection,$query);
+        $result2 = mysqli_query($connection,$query2);
+
+        }
+
+
+        //to add in borrowed_items table
+         $txt_ctrl_no = $_POST['txt_ctrl_no'];
+         $txt_asset_tag_no = $_POST['txt_asset_tag_no'];
+         $txt_item_no = $_POST['txt_item_no'];
+         $borrow_dropdown_categories = $_POST['borrow_dropdown_categories'];
+         $txt_serial_no = $_POST['txt_serial_no'];
+         $txt_item_details = $_POST['txt_item_details'];
+         $txt_remarks = $_POST['txt_remarks'];
+         $dropdown_status = "BORROWED";
+         $returning_plan_date = $_POST['borrow_date_time'];
+         $date = date("Y-m-d H:i:s", time());
+         $borrowed_by = $_SESSION['username'];
+
+         $log_type = "BORROW";
+
+
+        $array_columns0 = array("log_type","dated_log","log_by","user_id","user_name","department","ctrl_no","asset_tag_no","item_no","category","serial_no","item_details","item_added_date","remarks","status","returning_plan_date","borrowed_date","borrowed_by","returned_date","returned_by");
+        $array_column_values0 = array($log_type,$date,$borrowed_by,"","","",$txt_ctrl_no,$txt_asset_tag_no,$txt_item_no,$borrow_dropdown_categories,$txt_serial_no,$txt_item_details,"",$txt_remarks,$dropdown_status,$returning_plan_date,$date,$borrowed_by,"",""); 
+
+        query_add($connection,"logs",$array_columns0,$array_column_values0);
+
+
+
+        $array_columns = array("ctrl_no","asset_tag_no","item_no","category","serial_no","item_details","remarks","status","returning_plan_date","borrowed_date","borrowed_by");
+        $array_column_values = array($txt_ctrl_no,$txt_asset_tag_no,$txt_item_no,$borrow_dropdown_categories,$txt_serial_no,$txt_item_details,$txt_remarks,$dropdown_status,$returning_plan_date,$date,$borrowed_by);
+
+        query_add($connection,"borrowed_items",$array_columns,$array_column_values);
+
+
+
+        echo"<script>alert('Item Borrowed Successfully');
+                          window.location.href = 'user_home.php';
+                          </script>"; 
+        }
   
 }
 //-------------------------------------AJAX SELECT DATA FOR BORROW BUTTON MODAL.PHP
@@ -490,52 +543,102 @@ if(!empty($_POST['ajax_borrow_control_no']))
 
 if(ISSET($_POST['btn_return_item']))
 {
-    
-    if(ISSET($_POST['txt_ctrl_no']))
+    if($_SESSION['ROLE'] == "ADMIN")
     {
- 
-    $txt_ctrl_no = $_POST['txt_ctrl_no'];
-        
-    $query = "UPDATE items SET status ='AVAILABLE' WHERE ctrl_no = '$txt_ctrl_no'";
-    $query2 = "UPDATE items SET borrowed_by ='' WHERE ctrl_no = '$txt_ctrl_no'";
+        if(ISSET($_POST['txt_ctrl_no']))
+        {
 
-    $result = mysqli_query($connection,$query);
-    $result2 = mysqli_query($connection,$query2);
-        
+        $txt_ctrl_no = $_POST['txt_ctrl_no'];
+
+        $query = "UPDATE items SET status ='AVAILABLE' WHERE ctrl_no = '$txt_ctrl_no'";
+        $query2 = "UPDATE items SET borrowed_by ='' WHERE ctrl_no = '$txt_ctrl_no'";
+
+        $result = mysqli_query($connection,$query);
+        $result2 = mysqli_query($connection,$query2);
+
+        }
+
+        //to add in returned_items table
+         $txt_ctrl_no = $_POST['txt_ctrl_no'];
+         $txt_asset_tag_no = $_POST['txt_asset_tag_no'];
+         $txt_item_no = $_POST['txt_item_no'];
+         $return_dropdown_categories = $_POST['return_dropdown_categories'];
+         $txt_serial_no = $_POST['txt_serial_no'];
+         $txt_item_details = $_POST['txt_item_details'];
+         $txt_remarks = $_POST['txt_remarks'];
+         $dropdown_status = "RETURNED";
+         $date = date("Y-m-d H:i:s", time());
+         $returned_by = $_SESSION['username'];
+
+         $log_type = "RETURNED";
+
+
+        $array_columns0 = array("log_type","dated_log","log_by","user_id","user_name","department","ctrl_no","asset_tag_no","item_no","category","serial_no","item_details","item_added_date","remarks","status","returning_plan_date","borrowed_date","borrowed_by","returned_date","returned_by");
+        $array_column_values0 = array($log_type,$date,$returned_by,"","","",$txt_ctrl_no,$txt_asset_tag_no,$txt_item_no,$return_dropdown_categories,$txt_serial_no,$txt_item_details,"",$txt_remarks,$dropdown_status,"","","",$date,$returned_by); 
+
+        query_add($connection,"logs",$array_columns0,$array_column_values0);
+
+
+
+        $array_columns = array("ctrl_no","asset_tag_no","item_no","category","serial_no","item_details","remarks","status","returned_date","returned_by");
+        $array_column_values = array($txt_ctrl_no,$txt_asset_tag_no,$txt_item_no,$return_dropdown_categories,$txt_serial_no,$txt_item_details,$txt_remarks,$dropdown_status,$date,$returned_by);
+
+        query_add($connection,"returned_items",$array_columns,$array_column_values);
+
+
+
+        echo"<script>alert('Item Returned Successfully');
+                          window.location.href = 'adm_home.php';
+                          </script>";
     }
-    
-    //to add in returned_items table
-     $txt_ctrl_no = $_POST['txt_ctrl_no'];
-     $txt_asset_tag_no = $_POST['txt_asset_tag_no'];
-     $txt_item_no = $_POST['txt_item_no'];
-     $return_dropdown_categories = $_POST['return_dropdown_categories'];
-     $txt_serial_no = $_POST['txt_serial_no'];
-     $txt_item_details = $_POST['txt_item_details'];
-     $txt_remarks = $_POST['txt_remarks'];
-     $dropdown_status = "RETURNED";
-     $date = date("Y-m-d H:i:s", time());
-     $returned_by = $_SESSION['username'];
-    
-     $log_type = "RETURNED";
-    
-    
-    $array_columns0 = array("log_type","dated_log","log_by","user_id","user_name","department","ctrl_no","asset_tag_no","item_no","category","serial_no","item_details","item_added_date","remarks","status","returning_plan_date","borrowed_date","borrowed_by","returned_date","returned_by");
-    $array_column_values0 = array($log_type,$date,$returned_by,"","","",$txt_ctrl_no,$txt_asset_tag_no,$txt_item_no,$return_dropdown_categories,$txt_serial_no,$txt_item_details,"",$txt_remarks,$dropdown_status,"","","",$date,$returned_by); 
-    
-    query_add($connection,"logs",$array_columns0,$array_column_values0);
-    
-    
-          
-    $array_columns = array("ctrl_no","asset_tag_no","item_no","category","serial_no","item_details","remarks","status","returned_date","returned_by");
-    $array_column_values = array($txt_ctrl_no,$txt_asset_tag_no,$txt_item_no,$return_dropdown_categories,$txt_serial_no,$txt_item_details,$txt_remarks,$dropdown_status,$date,$returned_by);
-        
-    query_add($connection,"returned_items",$array_columns,$array_column_values);
-    
-    
-    
-    echo"<script>alert('Item Returned Successfully');
-				      window.location.href = 'user_home.php';
-                      </script>";
+    else
+    {
+        if(ISSET($_POST['txt_ctrl_no']))
+        {
+
+        $txt_ctrl_no = $_POST['txt_ctrl_no'];
+
+        $query = "UPDATE items SET status ='AVAILABLE' WHERE ctrl_no = '$txt_ctrl_no'";
+        $query2 = "UPDATE items SET borrowed_by ='' WHERE ctrl_no = '$txt_ctrl_no'";
+
+        $result = mysqli_query($connection,$query);
+        $result2 = mysqli_query($connection,$query2);
+
+        }
+
+        //to add in returned_items table
+         $txt_ctrl_no = $_POST['txt_ctrl_no'];
+         $txt_asset_tag_no = $_POST['txt_asset_tag_no'];
+         $txt_item_no = $_POST['txt_item_no'];
+         $return_dropdown_categories = $_POST['return_dropdown_categories'];
+         $txt_serial_no = $_POST['txt_serial_no'];
+         $txt_item_details = $_POST['txt_item_details'];
+         $txt_remarks = $_POST['txt_remarks'];
+         $dropdown_status = "RETURNED";
+         $date = date("Y-m-d H:i:s", time());
+         $returned_by = $_SESSION['username'];
+
+         $log_type = "RETURNED";
+
+
+        $array_columns0 = array("log_type","dated_log","log_by","user_id","user_name","department","ctrl_no","asset_tag_no","item_no","category","serial_no","item_details","item_added_date","remarks","status","returning_plan_date","borrowed_date","borrowed_by","returned_date","returned_by");
+        $array_column_values0 = array($log_type,$date,$returned_by,"","","",$txt_ctrl_no,$txt_asset_tag_no,$txt_item_no,$return_dropdown_categories,$txt_serial_no,$txt_item_details,"",$txt_remarks,$dropdown_status,"","","",$date,$returned_by); 
+
+        query_add($connection,"logs",$array_columns0,$array_column_values0);
+
+
+
+        $array_columns = array("ctrl_no","asset_tag_no","item_no","category","serial_no","item_details","remarks","status","returned_date","returned_by");
+        $array_column_values = array($txt_ctrl_no,$txt_asset_tag_no,$txt_item_no,$return_dropdown_categories,$txt_serial_no,$txt_item_details,$txt_remarks,$dropdown_status,$date,$returned_by);
+
+        query_add($connection,"returned_items",$array_columns,$array_column_values);
+
+
+
+        echo"<script>alert('Item Returned Successfully');
+                          window.location.href = 'user_home.php';
+                          </script>";
+    }
 }
 //-------------------------------------AJAX SELECT DATA FOR RETURN BUTTON MODAL.PHP
 if(!empty($_POST['ajax_return_control_no']))
@@ -567,10 +670,16 @@ if(!empty($_POST['ajax_return_control_no']))
 
 
 
+//to count available items on adm_home.php
+$count_avail_items = count_data($connection,"items","status = 'AVAILABLE'");
 
+//to count borrowed items on adm_home.php
+$count_borrowed_items = count_data($connection,"items","status = 'BORROWED'");
 
+//to count on going repair items on adm_home.php
+$count_ongoingRepair_items = count_data($connection,"items","status = 'UNDER REPAIR'");
 
-
-
+//to count for disposal items on adm_home.php
+$count_forDisposal_items = count_data($connection,"items","status = 'FOR DISPOSAL'");
 
 ?>
