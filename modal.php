@@ -60,10 +60,6 @@
                     <select class="form-select" aria-label="Default select example" style="text-align:center" name="dropdown_status">
                       <option selected>---</option>
                       <option value="AVAILABLE">AVAILABLE</option>
-                      <option value="UNAVAILABLE">UNAVAILABLE</option>
-                      <option value="FOR DISPOSAL">FOR DISPOSAL</option>
-                      <option value="FOR REPAIR">FOR REPAIR</option>
-                      <option value=""></option>
                     </select>
               </div>
 
@@ -145,6 +141,8 @@
                               <option value="UNAVAILABLE">UNAVAILABLE</option>
                               <option value="FOR DISPOSAL">FOR DISPOSAL</option>
                               <option value="FOR REPAIR">FOR REPAIR</option>
+                              <option value="FOR REPAIR">UNDER REPAIR</option>
+                              <option value="FOR REPAIR">DISPOSED</option>
                               <option value=""></option>
                             </select>
                       </div>
@@ -154,7 +152,7 @@
                 <div class="col" style="overflow:scroll ; height:650px">
                     <!-- Table Grid-->
                     Select to view
-                        <table id="update_modal_table" class="table table-hover" border=1>
+                        <table id="update_modal_table" class="table table-hover table-striped border-dark" border=1>
                             
                             <thead>
                                 <tr style="text-align:center" padding: 70px 0;>
@@ -257,6 +255,8 @@
                               <option value="UNAVAILABLE">UNAVAILABLE</option>
                               <option value="FOR DISPOSAL">FOR DISPOSAL</option>
                               <option value="FOR REPAIR">FOR REPAIR</option>
+                              <option value="FOR REPAIR">UNDER REPAIR</option>
+                              <option value="FOR REPAIR">DISPOSED</option>
                               <option value=""></option>
                             </select>
                       </div>
@@ -266,7 +266,7 @@
                 <div class="col" style="overflow:scroll ; height:650px">
                     <!-- Table Grid-->
                     Select to Delete
-                        <table id="delete_modal_table" class="table table-hover" border=1>
+                        <table id="delete_modal_table" class="table table-hover table-striped border-dark" border=1>
                             
                             <thead>
                                 <tr style="text-align:center" padding: 70px 0;>
@@ -397,7 +397,7 @@
                 <div class="col" style="overflow:scroll ; height:300px">
                     <!-- Table Grid-->
                     Select to view
-                        <table id="manage_returner_modal_table" class="table table-hover" border=1>
+                        <table id="manage_returner_modal_table" class="table table-hover table-striped border-dark" border=1>
                             
                             <thead>
                                 <tr style="text-align:center" padding: 70px 0;>
@@ -448,7 +448,7 @@
                 
                 <div class="col" style="overflow:scroll ; height:650px">
                     <!-- Table Grid-->
-                        <table class="table table-hover" border=1>
+                        <table class="table table-hover table-striped border-dark" border=1>
                             
                             <thead>
                                 <tr style="text-align:center" padding: 70px 0;>
@@ -489,6 +489,7 @@
           
         </div>
         <div class="modal-footer">
+            <a class="btn btn-success" href="<?php echo $filename; ?>" target="_blank" download><strong>Export to Excel</strong></a>
           <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
@@ -515,7 +516,7 @@
                 
                 <div class="col" style="overflow:scroll ; height:650px">
                     <!-- Table Grid-->
-                        <table class="table table-hover" border=1>
+                        <table class="table table-hover table-striped border-dark" border=1>
                             
                             <thead>
                                 <tr style="text-align:center" padding: 70px 0;>
@@ -574,7 +575,7 @@
                 
                 <div class="col" style="overflow:scroll ; height:650px">
                     <!-- Table Grid-->
-                        <table class="table table-hover" border=1>
+                        <table class="table table-hover table-striped border-dark" border=1>
                             
                             <thead>
                                 <tr style="text-align:center" padding: 70px 0;>
@@ -693,7 +694,7 @@
                 
                 <div class="col" style="overflow:scroll ; height:650px">
                     <!-- Table Grid-->
-                        <table id="borrow_modal_table" class="table table-hover" border=1>
+                        <table id="borrow_modal_table" class="table table-hover table-striped border-dark" border=1>
                             
                             <thead>
                                 <tr style="text-align:center" padding: 70px 0;>
@@ -797,7 +798,7 @@
                 
                 <div class="col" style="overflow:scroll ; height:650px">
                     <!-- Table Grid-->
-                        <table id="return_modal_table" class="table table-hover" border=1>
+                        <table id="return_modal_table" class="table table-hover table-striped border-dark" border=1>
                             
                             <thead>
                                 <tr style="text-align:center" padding: 70px 0;>

@@ -15,6 +15,21 @@ require_once('nav.php')
     
  
     <body>
+        
+        <style>
+            .card{
+                width: 300PX;
+            }
+            .card-header{
+                background-color: #3c4737;
+                color: #dbe2ef;
+                width: 300PX;
+            } 
+        </style>
+        
+        
+        
+        
         <!--
         <script type="text/javascript">
             
@@ -46,50 +61,131 @@ require_once('nav.php')
   
         </script>
        -->
-        
-   
-        
-        
-        
-        
-        
-  
+
           <div class="container">
               
               
               <!-- ROW 1 -->
-              <div class="row" style="height:50px">
+              <div class="row" style="height:65px">
               </div>
 
               
               <!-- ROW 2 -->
-              <div class="row">
-                  <div class="col">
-                      <div class="row">
-                          <div class="col" style="height:750px">
-                              
-                            <div id="available_items_chart"></div>
-                            
-                            <br>
-                              
-                            <div id="total_items_chart"></div>
-                         
-                              
+                <div class="row">
+
+                    <div class="col">
+                        <div class="row">
+
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 style="text-align:center">AVAILABLE ITEMS</h5>
+                                </div>
+                                <div class="card-block">
+                                    <div class="col" style="overflow:scroll ; height:650px">
+                                <!-- Table Grid-->
+                                    <table class="table table-hover table-striped border-dark" border=1>
+
+                                        <thead>
+                                            <tr style="text-align:center" padding: 70px 0;>    
+                                                <th style="font-size:13px">CONTROL NUMBER</th>
+                                                <th style="font-size:13px">ASSET TAG NUMBER</th>
+                                                <th style="font-size:13px">ITEM NUMBER</th>
+                                                <th style="font-size:13px">CATEGORY</th>
+                                                <th style="font-size:13px">SERIAL NUMBER</th>
+                                                <th style="font-size:13px">ITEM DETAILS</th>
+                                                <th style="font-size:13px">REMARKS</th>
+                                                <th style="font-size:13px">STATUS</th>
+
+                                            </tr>
+                                        </thead>
+
+                                        <tbody id="borrowed_logs_modal_table_tbody" style="text-align:center">
+
+                                            <?php echo $tr_borrow ?>
+
+                                        </tbody>
+
+                                    </table>
+                            </div>                   
+                                </div>
                             </div>
-                          </div>
-                          
-  
-                      </div>
-                  <div class="col">
-                      
+                        </div>
+
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 style="text-align:center">BORROWED ITEMS</h5>
+                                </div>
+                                <div class="card-block">
+                                    <div class="col" style="overflow:scroll ; height:650px">
+                                <!-- Table Grid-->
+                                    <table id="return_modal_table" class="table table-hover table-striped border-dark" border=1>
+
+                                        <thead>
+                                            <tr style="text-align:center" padding: 70px 0;>
+                                                <th>CONTROL NUMBER</th>
+                                                <th>ASSET TAG NUMBER</th>
+                                                <th>ITEM NUMBER</th>
+                                                <th>CATEGORY</th>
+                                                <th>SERIAL NUMBER</th>
+                                                <th>ITEM DETAILS</th>
+                                                <th>REMARKS</th>
+                                                <th>STATUS</th>
+                                                <th>CURRENTLY BORROWED BY</th>
+
+                                            </tr>
+                                        </thead>
+
+                                        <tbody id="return_modal_table_tbody" style="text-align:center">
+
+                                            <?php echo $tr_return ?>
+
+                                        </tbody>
+
+                                    </table>
+                </div>                   
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 style="text-align:center">FOR REPAIR</h5>
+                                </div>
+                                <div class="card-block">
+                                    <label>0</label>                   
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 style="text-align:center">FOR DISPOSAL</h5>
+                                </div>
+                                <div class="card-block">
+                                    <label>0</label>                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+         
+
+    
+              
+
+            
+       
                   
-                  </div>
-                      
-                  </div>
                   
                   
-                  
-              </div>
+    </div>
               
    
      
