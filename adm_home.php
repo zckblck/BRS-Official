@@ -82,7 +82,7 @@ require_once('nav.php')
                                     <h5 style="text-align:center">AVAILABLE ITEMS</h5>
                                 </div>
                                 <div class="card-block">
-                                    <strong>Total Available Assets :</strong> 
+                                    <strong style="text-align:left ; padding-left:10px">Total Available Assets :</strong> 
                                 </div>
                                 <div class="card-block">
                                     <h3 style="text-align:right ; padding-right:20px"><?php echo $count_avail_items ?></h3>                    
@@ -125,7 +125,7 @@ require_once('nav.php')
                                     <h5 style="text-align:center">BORROWED ITEMS</h5>
                                 </div>
                                 <div class="card-block">
-                                    <strong>Total Borrowed Assets :</strong> 
+                                    <strong style="text-align:left ; padding-left:10px">Total Borrowed Assets :</strong> 
                                 </div>
                                 <div class="card-block">
                                     <h3 style="text-align:right ; padding-right:20px"><?php echo $count_borrowed_items ?></h3>                    
@@ -168,7 +168,7 @@ require_once('nav.php')
                                     <h5 style="text-align:center">ON-GOING REPAIR</h5>
                                 </div>
                                 <div class="card-block">
-                                    <strong>Total On-Going Repair Assets :</strong> 
+                                    <strong style="text-align:left ; padding-left:10px">Total On-Going Repair Assets :</strong> 
                                 </div>
                                 <div class="card-block">
                                     <h3 style="text-align:right ; padding-right:20px"><?php echo $count_ongoingRepair_items ?></h3>                  
@@ -182,7 +182,7 @@ require_once('nav.php')
                                     <h5 style="text-align:center">FOR DISPOSAL</h5>
                                 </div>
                                 <div class="card-block">
-                                    <strong>Total For Disposal Assets :</strong> 
+                                    <strong style="text-align:left ; padding-left:10px">Total For Disposal Assets :</strong> 
                                 </div>
                                 <div class="card-block">
                                     <h3 style="text-align:right ; padding-right:20px"><?php echo $count_forDisposal_items ?></h3>                    
