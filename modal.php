@@ -153,7 +153,7 @@
                 <div class="col" style="overflow:scroll ; height:650px">
                     <!-- Table Grid-->
                     Select to view
-                        <table id="update_modal_table" class="table table-hover table-striped border-dark" border=1>
+                        <table id="update_modal_table" class="table table-hover border-dark" border=1>
                             
                             <thead>
                                 <tr style="text-align:center" padding: 70px 0;>
@@ -267,7 +267,7 @@
                 <div class="col" style="overflow:scroll ; height:650px">
                     <!-- Table Grid-->
                     Select to Delete
-                        <table id="delete_modal_table" class="table table-hover table-striped border-dark" border=1>
+                        <table id="delete_modal_table" class="table table-hover border-dark" border=1>
                             
                             <thead>
                                 <tr style="text-align:center" padding: 70px 0;>
@@ -398,7 +398,7 @@
                 <div class="col" style="overflow:scroll ; height:300px">
                     <!-- Table Grid-->
                     Select to view
-                        <table id="manage_returner_modal_table" class="table table-hover table-striped border-dark" border=1>
+                        <table id="manage_returner_modal_table" class="table table-hover border-dark" border=1>
                             
                             <thead>
                                 <tr style="text-align:center" padding: 70px 0;>
@@ -449,7 +449,7 @@
                 
                 <div class="col" style="overflow:scroll ; height:650px">
                     <!-- Table Grid-->
-                        <table class="table table-hover table-striped border-dark" border=1>
+                        <table class="table table-hover border-dark" border=1>
                             
                             <thead>
                                 <tr style="text-align:center" padding: 70px 0;>
@@ -517,7 +517,7 @@
                 
                 <div class="col" style="overflow:scroll ; height:650px">
                     <!-- Table Grid-->
-                        <table class="table table-hover table-striped border-dark" border=1>
+                        <table class="table table-hover border-dark" border=1>
                             
                             <thead>
                                 <tr style="text-align:center" padding: 70px 0;>
@@ -576,7 +576,7 @@
                 
                 <div class="col" style="overflow:scroll ; height:650px">
                     <!-- Table Grid-->
-                        <table class="table table-hover table-striped border-dark" border=1>
+                        <table class="table table-hover border-dark" border=1>
                             
                             <thead>
                                 <tr style="text-align:center" padding: 70px 0;>
@@ -695,7 +695,7 @@
                 
                 <div class="col" style="overflow:scroll ; height:650px">
                     <!-- Table Grid-->
-                        <table id="borrow_modal_table" class="table table-hover table-striped border-dark" border=1>
+                        <table id="borrow_modal_table" class="table table-hover border-dark" border=1>
                             
                             <thead>
                                 <tr style="text-align:center" padding: 70px 0;>
@@ -799,7 +799,7 @@
                 
                 <div class="col" style="overflow:scroll ; height:650px">
                     <!-- Table Grid-->
-                        <table id="return_modal_table" class="table table-hover table-striped border-dark" border=1>
+                        <table id="return_modal_table" class="table table-hover border-dark" border=1>
                             
                             <thead>
                                 <tr style="text-align:center" padding: 70px 0;>

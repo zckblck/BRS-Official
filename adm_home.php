@@ -91,7 +91,7 @@ require_once('nav.php')
                                     
                                     <div class="col" style="overflow:scroll ; height:650px">
                                 <!-- Table Grid-->
-                                    <table class="table table-hover table-striped border-dark" border=1>
+                                    <table class="table table-hover border-dark" border=1>
 
                                         <thead>
                                             <tr style="text-align:center" padding: 70px 0;>    
@@ -114,7 +114,7 @@ require_once('nav.php')
                                         </tbody>
 
                                     </table>
-                            </div>                   
+                                    </div>                   
                                 </div>
                             </div>
                         </div>
@@ -133,7 +133,7 @@ require_once('nav.php')
                                 <div class="card-block">
                                     <div class="col" style="overflow:scroll ; height:650px">
                                 <!-- Table Grid-->
-                                    <table class="table table-hover table-striped border-dark" border=1>
+                                    <table class="table table-hover border-dark" border=1>
 
                                         <thead>
                                             <tr style="text-align:center" padding: 70px 0;>
@@ -157,7 +157,7 @@ require_once('nav.php')
                                         </tbody>
 
                                     </table>
-                </div>                   
+                                    </div>                   
                                 </div>
                             </div>
                         </div>
@@ -173,6 +173,32 @@ require_once('nav.php')
                                 <div class="card-block">
                                     <h3 style="text-align:right ; padding-right:20px"><?php echo $count_ongoingRepair_items ?></h3>                  
                                 </div>
+                                <div class="card-block">
+                                    <div class="col" style="overflow:scroll ; height:650px">
+                                <!-- Table Grid-->
+                                    <table class="table table-hover border-dark" border=1>
+
+                                        <thead>
+                                            <tr style="text-align:center" padding: 70px 0;>
+                                                <th>CONTROL NUMBER</th>
+                                                <th>ASSET TAG NUMBER</th>
+                                                <th>ITEM NUMBER</th>
+                                                <th>CATEGORY</th>
+                                                <th>SERIAL NUMBER</th>
+                                                <th>ITEM DETAILS</th>
+                                                <th>STATUS</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody style="text-align:center">
+
+                                            <?php echo $tr_showOnGoingRepair ?>
+
+                                        </tbody>
+
+                                    </table>
+                                    </div>                   
+                                </div>
                             </div>
                         </div>
 
@@ -187,6 +213,32 @@ require_once('nav.php')
                                 <div class="card-block">
                                     <h3 style="text-align:right ; padding-right:20px"><?php echo $count_forDisposal_items ?></h3>                    
                                 </div>
+                                <div class="card-block">
+                                    <div class="col" style="overflow:scroll ; height:650px">
+                                <!-- Table Grid-->
+                                    <table class="table table-hover border-dark" border=1>
+
+                                        <thead>
+                                            <tr style="text-align:center" padding: 70px 0;>
+                                                <th>CONTROL NUMBER</th>
+                                                <th>ASSET TAG NUMBER</th>
+                                                <th>ITEM NUMBER</th>
+                                                <th>CATEGORY</th>
+                                                <th>SERIAL NUMBER</th>
+                                                <th>ITEM DETAILS</th>
+                                                <th>STATUS</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody style="text-align:center">
+
+                                            <?php echo $tr_showForDisposal ?>
+
+                                        </tbody>
+
+                                    </table>
+                                    </div>                   
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -196,10 +248,6 @@ require_once('nav.php')
             </div>
          
 
-    
-              
-
-            
        
                   
                   

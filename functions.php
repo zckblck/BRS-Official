@@ -592,6 +592,8 @@ while($row = $result->fetch_assoc() )
 
 
 
+
+
 //------------------display on table on RETURNED LOGS MODAL adm_home.php
 $query = "SELECT * FROM returned_items";
 
@@ -630,13 +632,63 @@ while($row = $result->fetch_assoc() )
 
 
 
+//------------------display on table on ON-GOING REPAIR TABLE in adm_home.php
+$query = "SELECT * FROM items WHERE status = 'UNDER REPAIR'";
+
+$result = mysqli_query($connection,$query);
+
+$tr_showOnGoingRepair = "";
+
+while($row = $result->fetch_assoc() )
+{
+    $control_no = $row['ctrl_no'];
+    $asset_tag_no = $row['asset_tag_no'];
+    $item_no = $row['item_no'];
+    $category = $row['category'];
+    $serial_no = $row['serial_no'];
+    $item_details = $row['item_details'];
+    $status = $row['status'];
+
+    $tr_showOnGoingRepair .= "<tr>
+            <td>$control_no</td>
+            <td>$asset_tag_no</td>
+            <td>$item_no</td>
+            <td>$category</td>
+            <td>$serial_no</td>
+            <td>$item_details</td>
+            <td>$status</td>
+        </tr>  "; 
+    }
 
 
 
+//------------------display on table on FOR DISPOSAL  TABLE in adm_home.php
+$query = "SELECT * FROM items WHERE status = 'FOR DISPOSAL'";
 
+$result = mysqli_query($connection,$query);
 
+$tr_showForDisposal = "";
 
+while($row = $result->fetch_assoc() )
+{
+    $control_no = $row['ctrl_no'];
+    $asset_tag_no = $row['asset_tag_no'];
+    $item_no = $row['item_no'];
+    $category = $row['category'];
+    $serial_no = $row['serial_no'];
+    $item_details = $row['item_details'];
+    $status = $row['status'];
 
+    $tr_showForDisposal .= "<tr>
+            <td>$control_no</td>
+            <td>$asset_tag_no</td>
+            <td>$item_no</td>
+            <td>$category</td>
+            <td>$serial_no</td>
+            <td>$item_details</td>
+            <td>$status</td>
+        </tr>  "; 
+    }
 
 
 
