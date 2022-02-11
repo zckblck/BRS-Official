@@ -88,7 +88,7 @@ require_once('nav.php')
                                 </div>
                                 <div class="card-block">
                                     
-                                    <div class="col" style="overflow:scroll ; height:650px">
+                                    <div class="col shadow-lg p-3 mb-5 bg-white rounded" style="overflow:scroll ; height:650px">
                                 <!-- Table Grid-->
                                     <table class="table table-hover border-dark" border=1>
 
