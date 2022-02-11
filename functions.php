@@ -378,10 +378,10 @@ if(ISSET($_POST['btn_filter']))
                         <td>$control_no</td>
                         <td>$asset_tag_no</td>
                         <td>$item_no</td>
-                        <td>$category</td>
+                        <td style='font-style:oblique;font-weight:bold'>$category</td>
                         <td>$serial_no</td>
                         <td>$item_details</td>
-                        <td>$status</td>
+                        <td style='font-weight:bold'>$status</td>
                     </tr>  "; 
     }
  
@@ -414,15 +414,15 @@ while($row = $result->fetch_assoc() )
 
     //to click on table
     $tr_update .= "<tr onclick='AJAX_UPDATE($counter)'>
-            <td>$control_no</td>
+            <td style='font-weight:bold'>$control_no</td>
             <td>$asset_tag_no</td>
             <td>$item_no</td>
-            <td>$category</td>
+            <td style='font-style:oblique;font-weight:bold'>$category</td>
             <td>$serial_no</td>
             <td>$item_details</td>
             <td>$remarks</td>
             <td>$status</td>
-            <td>$borrowed_by</td>
+            <td style='font-weight:bold'>$borrowed_by</td>
         </tr>  "; 
     }
 
@@ -450,10 +450,10 @@ while($row = $result->fetch_assoc() )
 
     //to click on table
     $tr_delete .= "<tr onclick='AJAX_DELETE($counter)'>
-            <td>$control_no</td>
+            <td style='font-weight:bold'>$control_no</td>
             <td>$asset_tag_no</td>
             <td>$item_no</td>
-            <td>$category</td>
+            <td style='font-style:oblique;font-weight:bold'>$category</td>
             <td>$serial_no</td>
             <td>$item_details</td>
             <td>$remarks</td>
@@ -482,7 +482,7 @@ while($row = $result->fetch_assoc() )
 
     //to click on table
     $tr_manage_returner .= "<tr onclick='AJAX_MANAGE_RETURNER($counter)'>
-            <td>$user_id</td>
+            <td style='font-style:oblique;font-weight:bold'>$user_id</td>
             <td>$user_name</td>
             <td>$pass</td>
             <td>$department</td>
@@ -523,7 +523,7 @@ while($row = $result->fetch_assoc() )
     $returned_by = $row['returned_by'];
     
     $tr_activity_logs .= "<tr>
-            <td>$log_type</td>
+            <td style='font-weight:bold'>$log_type</td>
             <td>$dated_log</td>
             <td>$log_by</td>
             <td>$user_id</td>
@@ -575,10 +575,10 @@ while($row = $result->fetch_assoc() )
     $borrowed_by = $row['borrowed_by'];
     
     $tr_borrowed_items_logs .= "<tr>
-            <td>$control_no</td>
+            <td style='font-weight:bold'>$control_no</td>
             <td>$asset_tag_no</td>
             <td>$item_no</td>
-            <td>$category</td>
+            <td style='font-style:oblique;font-weight:bold'>$category</td>
             <td>$serial_no</td>
             <td>$item_details</td>
             <td>$remarks</td>
@@ -615,10 +615,10 @@ while($row = $result->fetch_assoc() )
     $returned_by = $row['returned_by'];
     
     $tr_returned_items_logs .= "<tr>
-            <td>$control_no</td>
+            <td style='font-weight:bold'>$control_no</td>
             <td>$asset_tag_no</td>
             <td>$item_no</td>
-            <td>$category</td>
+            <td style='font-style:oblique;font-weight:bold'>$category</td>
             <td>$serial_no</td>
             <td>$item_details</td>
             <td>$remarks</td>
@@ -650,10 +650,10 @@ while($row = $result->fetch_assoc() )
     $status = $row['status'];
 
     $tr_showOnGoingRepair .= "<tr>
-            <td>$control_no</td>
+            <td style='font-weight:bold'>$control_no</td>
             <td>$asset_tag_no</td>
             <td>$item_no</td>
-            <td>$category</td>
+            <td style='font-style:oblique;font-weight:bold'>$category</td>
             <td>$serial_no</td>
             <td>$item_details</td>
             <td>$status</td>
@@ -680,10 +680,10 @@ while($row = $result->fetch_assoc() )
     $status = $row['status'];
 
     $tr_showForDisposal .= "<tr>
-            <td>$control_no</td>
+            <td style='font-weight:bold'>$control_no</td>
             <td>$asset_tag_no</td>
             <td>$item_no</td>
-            <td>$category</td>
+            <td style='font-style:oblique;font-weight:bold'>$category</td>
             <td>$serial_no</td>
             <td>$item_details</td>
             <td>$status</td>
@@ -720,10 +720,10 @@ while($row = $result->fetch_assoc() )
 
     //to click on table
     $tr_borrow .= "<tr onclick='AJAX_BORROW($counter)'>
-            <td>$control_no</td>
+            <td style='font-weight:bold'>$control_no</td>
             <td>$asset_tag_no</td>
             <td>$item_no</td>
-            <td>$category</td>
+            <td style='font-style:oblique;font-weight:bold'>$category</td>
             <td>$serial_no</td>
             <td>$item_details</td>
             <td>$remarks</td>
@@ -756,15 +756,15 @@ while($row = $result->fetch_assoc() )
 
     //to click on table
     $tr_return .= "<tr onclick='AJAX_RETURN($counter)'>
-            <td>$control_no</td>
+            <td style='font-weight:bold'>$control_no</td>
             <td>$asset_tag_no</td>
             <td>$item_no</td>
-            <td>$category</td>
+            <td style='font-style:oblique;font-weight:bold'>$category</td>
             <td>$serial_no</td>
             <td>$item_details</td>
             <td>$remarks</td>
             <td>$status</td>
-            <td>$borrowed_by</td>
+            <td style='font-weight:bold'>$borrowed_by</td>
         </tr>  "; 
     }
 
