@@ -4,6 +4,27 @@ require_once('functions.php');
 
 
 
+
+
+//to count available items on adm_home.php
+$count_avail_items = count_data($connection,"items","status = 'AVAILABLE'");
+
+//to count borrowed items on adm_home.php
+$count_borrowed_items = count_data($connection,"items","status = 'BORROWED'");
+
+//to count on going repair items on adm_home.php
+$count_ongoingRepair_items = count_data($connection,"items","status = 'UNDER REPAIR'");
+
+//to count for disposal items on adm_home.php
+$count_forDisposal_items = count_data($connection,"items","status = 'FOR DISPOSAL'");
+
+
+
+
+
+
+
+
 //-------------------------------------LOGIN BUTTON LOGIN.PHP
 
 //button LOGIN MAIN
@@ -670,16 +691,6 @@ if(!empty($_POST['ajax_return_control_no']))
 
 
 
-//to count available items on adm_home.php
-$count_avail_items = count_data($connection,"items","status = 'AVAILABLE'");
 
-//to count borrowed items on adm_home.php
-$count_borrowed_items = count_data($connection,"items","status = 'BORROWED'");
-
-//to count on going repair items on adm_home.php
-$count_ongoingRepair_items = count_data($connection,"items","status = 'UNDER REPAIR'");
-
-//to count for disposal items on adm_home.php
-$count_forDisposal_items = count_data($connection,"items","status = 'FOR DISPOSAL'");
 
 ?>

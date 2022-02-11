@@ -28,8 +28,6 @@ require_once('nav.php')
         </style>
         
         
-        
-        
         <!--
         <script type="text/javascript">
             
@@ -61,8 +59,9 @@ require_once('nav.php')
   
         </script>
        -->
+        
 
-          <div class="container">
+          <div class="container-fluid">
               
               
               <!-- ROW 1 -->
@@ -71,12 +70,12 @@ require_once('nav.php')
 
               
               <!-- ROW 2 -->
-                <div class="row">
+            <div class="row">
 
-                    <div class="col">
-                        <div class="row">
+                <div class="col">
+                    <div class="row">
 
-                        <div class="col">
+                        <div class="col" style="padding-left:60px">
                             <div class="card">
                                 <div class="card-header">
                                     <h5 style="text-align:center">AVAILABLE ITEMS</h5>
@@ -241,6 +240,24 @@ require_once('nav.php')
                                 </div>
                             </div>
                         </div>
+                            
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 style="text-align:center">SUMMARY</h5>
+                                </div>
+                                
+                                <div class="card-block">
+                                        <div id=""></div>
+                                </div>
+                            </div>
+                        </div>
+                            
+                            
+                            
+                            
+                            
+                            
                     </div>
 
                 </div>
