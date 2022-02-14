@@ -76,7 +76,7 @@ require_once('nav.php')
                     <div class="row">
 
                         <div class="col" style="padding-left:60px">
-                            <div class="card">
+                            <div class="card  shadow-lg mb-5 bg-white rounded">
                                 <div class="card-header">
                                     <h5 style="text-align:center">AVAILABLE ITEMS</h5>
                                 </div>
@@ -88,7 +88,7 @@ require_once('nav.php')
                                 </div>
                                 <div class="card-block">
                                     
-                                    <div class="col shadow-lg p-3 mb-5 bg-white rounded" style="overflow:scroll ; height:650px">
+                                    <div class="col" style="overflow:scroll ; height:650px">
                                 <!-- Table Grid-->
                                     <table class="table table-hover border-dark" border=1>
 
@@ -119,7 +119,7 @@ require_once('nav.php')
                         </div>
 
                         <div class="col">
-                            <div class="card">
+                            <div class="card    shadow-lg mb-5 bg-white rounded">
                                 <div class="card-header">
                                     <h5 style="text-align:center">BORROWED ITEMS</h5>
                                 </div>
@@ -162,7 +162,7 @@ require_once('nav.php')
                         </div>
 
                         <div class="col">
-                            <div class="card">
+                            <div class="card    shadow-lg mb-5 bg-white rounded">
                                 <div class="card-header">
                                     <h5 style="text-align:center">ON-GOING REPAIR</h5>
                                 </div>
@@ -202,7 +202,7 @@ require_once('nav.php')
                         </div>
 
                         <div class="col">
-                            <div class="card">
+                            <div class="card    shadow-lg mb-5 bg-white rounded">
                                 <div class="card-header">
                                     <h5 style="text-align:center">FOR DISPOSAL</h5>
                                 </div>
@@ -242,13 +242,15 @@ require_once('nav.php')
                         </div>
                             
                         <div class="col">
-                            <div class="card">
+                            <div class="card   shadow-lg mb-5 bg-white rounded">
                                 <div class="card-header">
                                     <h5 style="text-align:center">SUMMARY</h5>
                                 </div>
                                 
                                 <div class="card-block">
+                                    <div class="col" style="overflow:scroll ; height:650px">
                                         <div id=""></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

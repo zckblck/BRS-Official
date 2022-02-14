@@ -250,7 +250,7 @@
 
                       <div class="form-floating mb-3">
                           <label for="floatingInput">Status :</label>
-                            <select id="delete_status" class="form-select" aria-label="Default select example" style="text-align:center" name="dropdown_status" disabled>
+                            <select id="delete_status" class="form-select" aria-label="Default select example" style="text-align:center" name="dropdown_status" disabled required>
                               <option selected>---</option>
                               <option value="AVAILABLE">AVAILABLE</option>
                               <option value="UNAVAILABLE">UNAVAILABLE</option>
