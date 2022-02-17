@@ -15,14 +15,20 @@ require_once('modal.php');
         <link href="./Bootstrap513/bootstrap.min.css" rel="stylesheet">  <!-- CSS only -->
         <script src="./Bootstrap513/bootstrap.bundle.min.js" ></script>  <!-- JavaScript Bundle with Popper -->
         <script src="./Bootstrap513/jquery.min.js"></script> <!-- JQuery -->
+         
         <script type="text/javascript" src="Bootstrap513/charts.loader.js"></script><!-- google charts-->
         <script src="Bootstrap513/chart.min.js"></script> <!-- charts.js -->
+         
         <script src="./modal_onclick_select.js"></script> <!-- modal_onclick_select.js -->
          
          
         <script src="./Bootstrap513/moment.min.js"></script> <!-- cdn moment js -->
         <script src="Bootstrap513/bootstrap-datetimepicker.min.js"></script> <!-- cdn js -->
         <script src="Bootstrap513/bootstrap-datetimepicker.min.css"></script> <!-- cdn css -->
+         
+        <script src="Bootstrap513/loader.js"></script> <!--   -->
+        <script src="Bootstrap513/jsapi.js"></script> <!--   -->
+        <link rel="stylesheet" href="Bootstrap513/bootstrap.min.css"> <!--   -->
          
     </head>
     

@@ -28,36 +28,47 @@ require_once('nav.php')
         </style>
         
         
-       <!--
+       
         <script type="text/javascript">
-            // Load google charts
-            google.charts.load('current', {'packages':['bar']});
-            google.charts.setOnLoadCallback(drawChart_available_items);
+            
+            google.charts.load('current', {'packages':['corechart']});
+            //google.load("visualization", "1", {packages:["corechart"]});
+             //google.setOnLoadCallback(drawChart);
+             google.charts.setOnLoadCallback(drawChart);
+             function drawChart() {
+             var data = google.visualization.arrayToDataTable([
+                  ['Categories', 'Status'],
+                  
+                    <?php
+                    
+                        
 
-            // Draw the chart and set the chart values
-            function drawChart_available_items() {
-              var data = google.visualization.arrayToDataTable([
-              ['Available Items', 'Quantity'],
-              ['Work', 5],
-              ['Eat', 2],
-              ['TV', 4],
-              ['Gym', 2],
-              ['Sleep', 8]
-            ]);
+                        while($row = mysqli_fetch_assoc($result))
+                        {
+                            echo "['".$row['ctrl_no']."',".$row['status']."],";
+                        }
+                    ?>
+                ]);
 
-              // Optional; add a title and set the width and height of the chart
-              var options = {'title':'Available Items', 'width':550, 'height':400};
-
-              // Display the chart inside the <div> element with id="piechart"
-              var chart = new google.charts.Bar(document.getElementById('available_items_chart'));
-              chart.draw(data, options);
-            }
+                 var options = {
+                     title: 'item stats',
+                      pieHole: 0.4,
+                              pieSliceTextStyle: {
+                                color: 'black',
+                              },
+                              legend: 'none'
+                 }
+                var chart = new google.visualization.PieChart(document.getElementById("columnchart12"));
+                 chart.draw(data,options);
+                 }
+            
+            
             
         </script>
-       -->
+       
 
           <div class="container-fluid">
-              
+       
               
               <!-- ROW 1 -->
               <div class="row" style="height:50px">
@@ -244,7 +255,7 @@ require_once('nav.php')
                                 
                                 <div class="card-block">
                                     <div class="col" style="overflow:scroll ; height:650px">
-                                        <div id=""></div>
+                                        <div id="columnchart12" style="width: 100%; height: 500px;"></div>
                                     </div>
                                 </div>
                             </div>
