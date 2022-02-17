@@ -28,9 +28,8 @@ require_once('nav.php')
         </style>
         
         
-        <!--
+       <!--
         <script type="text/javascript">
-            
             // Load google charts
             google.charts.load('current', {'packages':['bar']});
             google.charts.setOnLoadCallback(drawChart_available_items);
@@ -54,12 +53,8 @@ require_once('nav.php')
               chart.draw(data, options);
             }
             
-            
-            
-  
         </script>
        -->
-        
 
           <div class="container-fluid">
               
