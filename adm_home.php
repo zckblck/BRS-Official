@@ -28,44 +28,14 @@ require_once('nav.php')
         </style>
         
         
-       
+    
         <script type="text/javascript">
             
-            google.charts.load('current', {'packages':['corechart']});
-            //google.load("visualization", "1", {packages:["corechart"]});
-             //google.setOnLoadCallback(drawChart);
-             google.charts.setOnLoadCallback(drawChart);
-             function drawChart() {
-             var data = google.visualization.arrayToDataTable([
-                  ['Categories', 'Status'],
-                  
-                    <?php
-                    
-                        
-
-                        while($row = mysqli_fetch_assoc($result))
-                        {
-                            echo "['".$row['ctrl_no']."',".$row['status']."],";
-                        }
-                    ?>
-                ]);
-
-                 var options = {
-                     title: 'item stats',
-                      pieHole: 0.4,
-                              pieSliceTextStyle: {
-                                color: 'black',
-                              },
-                              legend: 'none'
-                 }
-                var chart = new google.visualization.PieChart(document.getElementById("columnchart12"));
-                 chart.draw(data,options);
-                 }
             
             
             
         </script>
-       
+  
 
           <div class="container-fluid">
        
@@ -255,7 +225,7 @@ require_once('nav.php')
                                 
                                 <div class="card-block">
                                     <div class="col" style="overflow:scroll ; height:650px">
-                                        <div id="columnchart12" style="width: 100%; height: 500px;"></div>
+                                        <div id="" style="width: 100%; height: 500px;"></div>
                                     </div>
                                 </div>
                             </div>

@@ -770,16 +770,4 @@ while($row = $result->fetch_assoc() )
 
 
 
-//------------------display on CHART on  ADM HOME adm_home.php
-$query = "SELECT * FROM items WHERE status = 'AVAILABLE'";
-
-$result = mysqli_query($connection,$query);
-
-$data = array();
-foreach ($result as $row)
-{
-    $data[] = $row;
-}
-
-
 ?>
