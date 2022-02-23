@@ -27,12 +27,42 @@ require_once('nav.php')
             } 
         </style>
         
-        
     
         <script type="text/javascript">
             
-            
-            
+              google.charts.load('current', {'packages':['corechart']});
+              google.charts.setOnLoadCallback(drawChart);
+
+              function drawChart() {
+
+                var data = google.visualization.arrayToDataTable([
+                  ['Item Number', 'Status'],
+                  <?php
+    
+                    $query = "SELECT FROM items(item_no,status)";
+                    $result = mysqli_query($connection,$query);
+                    $entry = "";
+                    while($row = mysqli_fetch_array($result) )
+                    {
+                        $entry .= "['".$row['item_no']."',".$row['status']."],";
+                    }
+
+                    echo json_encode($entry);
+    
+    
+    
+                ?>
+                    
+                ]);
+
+                var options = {
+                  title: 'My Daily Activities'
+                };
+
+                var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+                chart.draw(data, options);
+              }
             
         </script>
   
@@ -225,7 +255,7 @@ require_once('nav.php')
                                 
                                 <div class="card-block">
                                     <div class="col" style="overflow:scroll ; height:650px">
-                                        <div id="" style="width: 100%; height: 500px;"></div>
+                                        <div id="piechart" style="width: 100%; height: 500px;"></div>
                                     </div>
                                 </div>
                             </div>
