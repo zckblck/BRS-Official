@@ -26,7 +26,7 @@ require_once('modal.php');
         <script src="Bootstrap513/bootstrap-datetimepicker.min.js"></script> <!-- cdn js -->
         <script src="Bootstrap513/bootstrap-datetimepicker.min.css"></script> <!-- cdn css -->
          
-        <script src="Bootstrap513/loader.js"></script> <!--   -->
+        <script type="text/javascript" src="Bootstrap513/loader.js"></script> <!--   -->
         <script src="Bootstrap513/jsapi.js"></script> <!--   -->
         <link rel="stylesheet" href="Bootstrap513/bootstrap.min.css"> <!--   -->
          

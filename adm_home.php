@@ -36,21 +36,19 @@ require_once('nav.php')
               function drawChart() {
 
                 var data = google.visualization.arrayToDataTable([
+                    
                   ['Item Number', 'Status'],
+                    
                   <?php
     
-                    $query = "SELECT FROM items(item_no,status)";
+                    $query = "SELECT * FROM items";
                     $result = mysqli_query($connection,$query);
-                    $entry = "";
+                    
                     while($row = mysqli_fetch_array($result) )
                     {
-                        $entry .= "['".$row['item_no']."',".$row['status']."],";
+                        echo "['".$row['item_no']."',".$row['status']."],";
                     }
 
-                    echo json_encode($entry);
-    
-    
-    
                 ?>
                     
                 ]);
@@ -69,7 +67,7 @@ require_once('nav.php')
 
           <div class="container-fluid">
        
-              
+              <div id="piechart" style="width: 100%; height: 500px;"></div>
               <!-- ROW 1 -->
               <div class="row" style="height:50px">
               </div>
