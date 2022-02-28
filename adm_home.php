@@ -30,8 +30,8 @@ require_once('nav.php')
     
         <script type="text/javascript">
             
-              google.charts.load('current', {'packages':['corechart']});
-              google.charts.setOnLoadCallback(drawChart);
+              google.load("visualization", "1", {packages:["corechart"]});
+              google.setOnLoadCallback(drawChart);
 
               function drawChart() {
 
@@ -52,7 +52,12 @@ require_once('nav.php')
                 ]);
 
                 var options = {
-                  title: 'My Daily Activities'
+                  title: 'Item Status'
+                    pieHole: 0.5,
+                    pieSliceTextStyle: {
+                    color: 'black',
+                    },
+                    legend: 'none'
                 };
 
                 var chart = new google.visualization.PieChart(document.getElementById('piechart'));

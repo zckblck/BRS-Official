@@ -429,7 +429,7 @@ while($row = $result->fetch_assoc() )
 
 
 //------------------display on table on DELETE ITEM MODAL adm_home.php
-$query = "SELECT * FROM items";
+$query = "SELECT * FROM items WHERE status != 'BORROWED'";
 
 $result = mysqli_query($connection,$query);
 
