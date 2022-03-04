@@ -249,15 +249,41 @@ require_once('nav.php')
                         </div>
                             
                         <div class="col">
-                            <div class="card   shadow-lg mb-5 bg-white rounded">
+                            <div class="card    shadow-lg mb-5 bg-white rounded">
                                 <div class="card-header">
-                                    <h5 style="text-align:center">SUMMARY</h5>
+                                    <h5 style="text-align:center">DISPOSED</h5>
                                 </div>
-                                
+                                <div class="card-block">
+                                    <strong style="text-align:left ; padding-left:10px">Total Disposed Assets :</strong> 
+                                </div>
+                                <div class="card-block">
+                                    <h3 style="text-align:right ; padding-right:20px"><?php echo $count_Disposed_items ?></h3>                    
+                                </div>
                                 <div class="card-block">
                                     <div class="col" style="overflow:scroll ; height:650px">
-                                        <div id="piechart" style="width: 100%; height: 500px;"></div>
-                                    </div>
+                                <!-- Table Grid-->
+                                    <table class="table table-hover border-dark" border=1>
+
+                                        <thead>
+                                            <tr style="text-align:center" padding: 70px 0;>
+                                                <th>CONTROL NUMBER</th>
+                                                <th>ASSET TAG NUMBER</th>
+                                                <th>ITEM NUMBER</th>
+                                                <th>CATEGORY</th>
+                                                <th>SERIAL NUMBER</th>
+                                                <th>ITEM DETAILS</th>
+                                                <th>STATUS</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody style="text-align:center">
+
+                                            <?php echo $tr_showDisposed ?>
+
+                                        </tbody>
+
+                                    </table>
+                                    </div>                   
                                 </div>
                             </div>
                         </div>

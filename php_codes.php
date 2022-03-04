@@ -18,7 +18,8 @@ $count_ongoingRepair_items = count_data($connection,"items","status = 'UNDER REP
 //to count for disposal items on adm_home.php
 $count_forDisposal_items = count_data($connection,"items","status = 'FOR DISPOSAL'");
 
-
+//to count for disposal items on adm_home.php
+$count_Disposed_items = count_data($connection,"items","status = 'DISPOSED'");
 
 
 

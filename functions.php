@@ -691,6 +691,33 @@ while($row = $result->fetch_assoc() )
     }
 
 
+//------------------display on table on FOR DISPOSAL  TABLE in adm_home.php
+$query = "SELECT * FROM items WHERE status = 'DISPOSED'";
+
+$result = mysqli_query($connection,$query);
+
+$tr_showDisposed = "";
+
+while($row = $result->fetch_assoc() )
+{
+    $control_no = $row['ctrl_no'];
+    $asset_tag_no = $row['asset_tag_no'];
+    $item_no = $row['item_no'];
+    $category = $row['category'];
+    $serial_no = $row['serial_no'];
+    $item_details = $row['item_details'];
+    $status = $row['status'];
+
+    $tr_showDisposed .= "<tr>
+            <td style='font-weight:bold'>$control_no</td>
+            <td>$asset_tag_no</td>
+            <td>$item_no</td>
+            <td style='font-style:oblique;font-weight:bold'>$category</td>
+            <td>$serial_no</td>
+            <td>$item_details</td>
+            <td>$status</td>
+        </tr>  "; 
+    }
 
 
 
